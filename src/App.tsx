@@ -10,7 +10,6 @@ function App() {
     <PageRouter />
   </HelmetProvider>
   )
-
 }
 
 export default App;
