@@ -1,10 +1,10 @@
 export const theme = {
     color: {
-      white: '#FFFFFF',
+      white: '#FDFFFC',
       offwhite: '#E5E5E5',
-      orange: '#FCA311',
-      deepblue: '#14213D',
-      black: '#000'
+      orange: '#FF9F1C',
+      blue: '#669BBC',
+      black: '#011627'
     },
     fontFamily: {
       headerFont: `"Kanit", sans-serif`,

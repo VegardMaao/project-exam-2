@@ -6,7 +6,7 @@ export const GlobalStyle = createGlobalStyle`
     margin: 0px;
     font-family: ${theme.fontFamily.copyFont};
     font-weight: 350;
-    color: ${theme.color.deepblue};
+    color: ${theme.color.black};
     scroll-behavior: smooth;
     max-width: 100vw;
   }
