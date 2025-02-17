@@ -45,7 +45,7 @@ export const NavLinkWrapper = styled.div`
         @media(${device.sm}){
         display: flex;
         flex-direction: column;
-        height: 60vh;
+        height: 80vh;
         justify-content: space-evenly;
         margin-left: none;
         }
@@ -56,7 +56,7 @@ export const NavLinkWrapper = styled.div`
 export const StyledNavLink = styled(NavLink)`
     transition: 0.3s;
     text-decoration: none;
-    color: ${theme.color.deepblue};
+    color: ${theme.color.blue};
     margin-left: 2rem;
     padding: 10px;
     border-radius: 15px;
@@ -66,7 +66,7 @@ export const StyledNavLink = styled(NavLink)`
     }
 
     &: hover {
-        background: ${theme.color.deepblue};
+        background: ${theme.color.blue};
         color: ${theme.color.orange};
     }
 
@@ -81,7 +81,20 @@ export const StyledNavLink = styled(NavLink)`
 export const StyledLogo = styled.img`
     position: relative;
     z-index: 100;
-    width: 150px;
+    height: calc(100% - 10px);
+    background: ${theme.color.orange};
+    border: 2px solid ${theme.color.black};
+    border-radius: 15px;
+    left: 10px;
+
+    &: hover {
+        background: ${theme.color.deepblue};
+        color: ${theme.color.orange};
+    }
+
+    @media(${device.sm}){
+    left: 0px;
+    }
 `;  
 
 export const StyledHamburgerIcon = styled.div`
@@ -97,31 +110,5 @@ export const StyledHamburgerIcon = styled.div`
 
     @media(${device.sm}){
     display: block;
-    }
-`;
-
-export const CartIcon = styled(NavLink)`
-    transition: 0.3s;
-    z-index: 100;
-    color: ${theme.color.deepblue};
-    display: ${(props) => props.showCart ? "block" : "none"};
-    margin-right: 20px;
-    border-radius: 15px;
-    
-    i{
-    font-size: 1.8rem;
-    padding: 10px;
-    color: inherit;
-    }
-
-    &: hover {
-        background: ${theme.color.deepblue};
-        color: ${theme.color.orange};
-    }
-
-    @media${device.sm}{
-    position: absolute;
-    right: 80px;
-    top: 30px;
     }
 `;
