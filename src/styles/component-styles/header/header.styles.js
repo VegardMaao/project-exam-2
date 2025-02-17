@@ -16,10 +16,12 @@ export const NavbarWrapper = styled.nav`
     height: 60px;
     align-self: start;
     margin: 0;
+    display: flex;
+    align-items: center;
     }
 
     .active{
-        background: ${theme.color.deepblue};
+        background: ${theme.color.blue};
         color: ${theme.color.orange};
     }
         
@@ -48,6 +50,7 @@ export const NavLinkWrapper = styled.div`
         height: 80vh;
         justify-content: space-evenly;
         margin-left: none;
+        background: ${theme.color.orange};
         }
     
     }
@@ -74,6 +77,7 @@ export const StyledNavLink = styled(NavLink)`
     font-size: 1.3rem;
     display: block; 
     margin: 2rem auto;
+    color: ${theme.color.blue};
     }
 `;
 
@@ -86,11 +90,6 @@ export const StyledLogo = styled.img`
     border: 2px solid ${theme.color.black};
     border-radius: 15px;
     left: 10px;
-
-    &: hover {
-        background: ${theme.color.deepblue};
-        color: ${theme.color.orange};
-    }
 
     @media(${device.sm}){
     left: 0px;
