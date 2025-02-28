@@ -2,6 +2,8 @@
 import { useGetAPI } from "../../api/index.js";
 // @ts-ignore
 import { loadingStyles } from "../../styles/index.js";
+import { SetTopVenue } from "./subComponents/topVenue.js";
+
 
 export function FeaturedVenue({url} : {url: string}) {
 
@@ -15,9 +17,5 @@ export function FeaturedVenue({url} : {url: string}) {
       return <div>Error loading data</div>;
     }
 
-    
-    console.log(data)
-
-
-    return <div></div>
+    return <SetTopVenue data={data} />
 }
