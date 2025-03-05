@@ -2,10 +2,9 @@
 import { useGetAPI } from "../../api/index.js";
 // @ts-ignore
 import { loadingStyles } from "../../styles/index.js";
-import { SetTopVenue } from "./subComponents/topVenue.tsx";
+import { SetAllVenues } from "./subComponents/setAllVenues.tsx";
 
-
-export function FeaturedVenue({url} : {url: string}) {
+export function AllVenues({url} : {url: string}) {
 
     const {data, isLoading, isError} = useGetAPI(url);
 
@@ -17,5 +16,6 @@ export function FeaturedVenue({url} : {url: string}) {
       return <div>Error loading data</div>;
     }
 
-    return <SetTopVenue data={data} />
+
+    return <SetAllVenues data={data} />
 }

@@ -2,10 +2,11 @@ import { useEffect, useState } from "react";
 // @ts-ignore
 import { sortByRating } from "../../sortArrays/sortArrays.js";
 // @ts-ignore
-import { topVenueStyles } from "../../../styles";
+import { topVenueStyles as S } from "../../../styles";
 import { Link } from "react-router-dom";
+import { VenuesArr } from "../../interfaces/venues.js";
 
-export function SetTopVenue({data} : {data : any}) {
+export function SetTopVenue({data} : {data : VenuesArr}) {
     const [topVenue, SetTopVenue] = useState();
 
     useEffect(() => {
@@ -15,15 +16,14 @@ export function SetTopVenue({data} : {data : any}) {
 
     if (topVenue) {
         const { id, name, description, media } = topVenue || {};
-        console.log(name, description, media);
-        return <topVenueStyles.TopVenueWrapper url={media[0].url} title={media[0].alt}>
+        return <S.TopVenueWrapper url={media[0].url} title={media[0].alt}>
         <Link to={`/venues/${id}`}>
-        <topVenueStyles.TopVenueInfoDiv>
-            <topVenueStyles.TopVenueHeader>{name}</topVenueStyles.TopVenueHeader>
-            <topVenueStyles.TopVenueParagraph>{description}</topVenueStyles.TopVenueParagraph>
-        </topVenueStyles.TopVenueInfoDiv>
+        <S.TopVenueInfoDiv>
+            <S.TopVenueHeader>{name}</S.TopVenueHeader>
+            <S.TopVenueParagraph>{description}</S.TopVenueParagraph>
+        </S.TopVenueInfoDiv>
         </Link>
-    </topVenueStyles.TopVenueWrapper>
+    </S.TopVenueWrapper>
     
     }
 
