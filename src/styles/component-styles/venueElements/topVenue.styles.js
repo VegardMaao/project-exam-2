@@ -6,7 +6,7 @@ import { device } from "../../BreakPoints";
 
 export const TopVenueWrapper = styled.div`
     margin: auto;
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), no-repeat center/100% url(${(props) => props.url});
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), no-repeat center/90% url(${(props) => props.url});
     height: 50vh;
     width: 50vw;
 
@@ -30,6 +30,8 @@ export const TopVenueWrapper = styled.div`
 
 export const TopVenueInfoDiv = styled.div`
     height: 50%;
+    width: 70%;
+    margin: auto;
     display: flex;
     flex-direction: column;
     -webkit-box-align: center;
