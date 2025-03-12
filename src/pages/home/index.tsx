@@ -1,4 +1,3 @@
-// import { FeaturedVenue } from "../../components/venueComponents/featuredVenue";
 import { Metadata } from "../../components/metadata/metadata";
 //@ts-ignore
 import { featured, all } from "../../components/venueComponents/index";
