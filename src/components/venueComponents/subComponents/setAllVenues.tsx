@@ -2,16 +2,14 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { VenuesArr } from "../../interfaces/venues.js";
 //@ts-ignore
-import { allVenuesStyles as S } from "../../../styles";
+import { buttons, allVenuesStyles as S } from "../../../styles";
 
 export function SetAllVenues({data} : {data : VenuesArr}) {
-    const [allVenues, setAllVenues] = useState();
+    const [allVenues, setAllVenues] = useState<VenuesArr | undefined>(undefined);
 
     useEffect(() => {
         setAllVenues(data);
     }, []);
-
-    console.log(allVenues);
 
     if (allVenues) {
         return <S.VenuesWrapper>
@@ -23,6 +21,10 @@ export function SetAllVenues({data} : {data : VenuesArr}) {
                     </Link>
                     <S.VenueTitle>{item.name}</S.VenueTitle>
                     <S.VenueDescription>{item.description}</S.VenueDescription>
+                    <S.VenueDescription props={"underline"}>{`Up to ${item.maxGuests} guests, for ${item.price} dollars/night`}</S.VenueDescription>
+                    <Link to={`/venues/${item.id}`}>
+                        <buttons.ButtonComponent colors="primary" size="small">See Venue</buttons.ButtonComponent>
+                    </Link>
                 </S.VenueItem>
             ))}
         </S.AllVenuesDiv>

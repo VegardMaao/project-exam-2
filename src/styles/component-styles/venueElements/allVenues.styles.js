@@ -24,15 +24,17 @@ export const AllVenuesDiv = styled.div`
 `;
 
 export const VenueItem = styled.div`
-    display: flex;
+    display: grid;
     border: 2px solid black;
+    grid-template-rows: 3fr 1fr 5fr 1fr 1fr;
     width: 300px;
-    height: 400px;
+    height: 500px;
     margin: 20px;
     padding: 10px;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
+    justify-items: center;
+}
 
     a{
     align-self: center;
@@ -40,8 +42,8 @@ export const VenueItem = styled.div`
 `;
 
 export const Thumbnail = styled.img`
-  max-height: 100px;
-  max-width: 100px; 
+  max-width: 100%; 
+  max-height: 150px;
 `;
 
 export const VenueTitle = styled.h2`
@@ -51,7 +53,10 @@ export const VenueTitle = styled.h2`
 `;
 
 export const VenueDescription = styled.p`
-    max-width: 75%;
-    max-height: 50px;
+    max-width: 100%;
+    max-height: 75%;
     overflow: hidden;
+    text-align: center;
+    word-wrap: break-word;
+    text-decoration: ${({ props }) => props}
 `;

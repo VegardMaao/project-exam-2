@@ -28,6 +28,7 @@ export interface Venue {
         lat: number,
         lng: number
       }
+    prevState: undefined
 };
 
 export interface VenuesArr extends Array<Venue>{};

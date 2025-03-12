@@ -43,6 +43,7 @@ export const TopVenueInfoDiv = styled.div`
 export const TopVenueHeader = styled.h1`
     margin: 0px;
     color: ${theme.color.offwhite};
+    word-wrap: break-word;
 `;
 
 export const TopVenueParagraph = styled.p`
@@ -50,6 +51,7 @@ export const TopVenueParagraph = styled.p`
     text-align: center;
     font-size: 1.1rem;
     max-width: 80vw;
+    word-wrap: break-word;
 `;
 
 export const ButtonBox = styled.div`
