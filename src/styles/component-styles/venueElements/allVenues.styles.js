@@ -11,11 +11,16 @@ export const VenuesWrapper = styled.div`
 
 export const AllVenuesDiv = styled.div`
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-    grid-gap: .5rem;
-    align-items: start;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-gap: 0.5rem;
+    align-items: center;
     width: 70vw;
-    margin: 0px;
+    max-width: 1100px;
+    margin: auto;
+
+    @media${device.sm}{
+        width: 100vw;
+    }
 `;
 
 export const VenueItem = styled.div`
@@ -41,8 +46,8 @@ export const Thumbnail = styled.img`
 
 export const VenueTitle = styled.h2`
     font-size: 1.3rem;
-    overflow: hidden;
-    max-width: 75%;
+    word-wrap: break-word;
+    max-width: 250px;
 `;
 
 export const VenueDescription = styled.p`
