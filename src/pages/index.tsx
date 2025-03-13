@@ -8,7 +8,7 @@ export const PageRouter =  () => {
     <Routes>
       <Route path="/" element= {<Layout />}>
         <Route index element={<Home/>}/>
-        <Route path="venues" element={<Venue />}/>
+        <Route path="venues/:id" element={<Venue />}/>
       </Route>
     </Routes>
   )

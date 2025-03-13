@@ -1,11 +1,10 @@
 // @ts-ignore
 import { useGetAPI } from "../../api/index.js";
 // @ts-ignore
-import { loadingStyles } from "../../styles/index.js";
+import { loadingStyles, singleVenueStyles as S } from "../../styles/index.js";
 
-
-export function FeaturedVenue({url} : {url: string}) {
-
+export function SingleVenue(params: any) { 
+    const {url, setTitle, setDescription} = params;
     const {data, isLoading, isError} = useGetAPI(url);
 
     if (isLoading) {
@@ -16,5 +15,14 @@ export function FeaturedVenue({url} : {url: string}) {
       return <div>Error loading data</div>;
     }
 
-    return <div></div>
+    console.log(data);
+    const {description, name, location, maxGuests, media, meta, price, rating, _count} = data;
+    console.log(media);
+     
+    setTitle(name);
+    setDescription(description);
+
+    return <S.SingleVenueWrapper>
+        {/* <S.SinglevenueImage  /> */}
+      </S.SingleVenueWrapper>
 }
