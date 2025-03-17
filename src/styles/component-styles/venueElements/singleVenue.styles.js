@@ -14,6 +14,13 @@ export const SingleVenueImage = styled.img`
     margin: auto;
 `;
 
-export const SingleVenueHeading = styled.h1``;
+export const SingleVenueHeading = styled.h1`
+    max-width: 75vw;
+    margin: auto;
+`;
 
-export const SingleVenueParagraph = styled.p``;
+export const SingleVenueParagraph = styled.p`
+    max-width: 75vw;
+    text-align: center;
+    margin: 15px auto;
+`;

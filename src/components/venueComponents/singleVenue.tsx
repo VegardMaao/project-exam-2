@@ -1,7 +1,8 @@
 // @ts-ignore
 import { useGetAPI } from "../../api/index.js";
 // @ts-ignore
-import { loadingStyles, singleVenueStyles as S } from "../../styles/index.js";
+import { loadingStyles } from "../../styles"
+import { DisplaySingleVenue } from "./subComponents/displaySingleVenue.js";
 
 export function SingleVenue(params: any) { 
     const {url, setTitle, setDescription} = params;
@@ -15,14 +16,10 @@ export function SingleVenue(params: any) {
       return <div>Error loading data</div>;
     }
 
-    console.log(data);
-    const {description, name, location, maxGuests, media, meta, price, rating, _count} = data;
-    console.log(media);
+    const {description, name} = data;
      
     setTitle(name);
     setDescription(description);
 
-    return <S.SingleVenueWrapper>
-        {/* <S.SinglevenueImage  /> */}
-      </S.SingleVenueWrapper>
+    return <DisplaySingleVenue venueInfo={data} />
 }
