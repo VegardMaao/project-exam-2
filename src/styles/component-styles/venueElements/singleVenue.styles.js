@@ -5,7 +5,7 @@ export const SingleVenueWrapper = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-Venues: center;
+    align-items: center;
 `;
 
 export const SingleVenueImage = styled.img`
@@ -23,4 +23,11 @@ export const SingleVenueParagraph = styled.p`
     max-width: 75vw;
     text-align: center;
     margin: 15px auto;
+`;
+
+export const AmenitiesDiv = styled.div`
+    display: grid;
+`;
+
+export const AmenitiesCheckBox = styled.input`
 `;
