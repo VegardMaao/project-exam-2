@@ -3,7 +3,7 @@ export const headerLinks = [
     title: "Home",
     href: "/"
   }, {
-    title: "All Venues",
+    title: "Venue",
     href: "/venues"
   },{
     title: "My Page",

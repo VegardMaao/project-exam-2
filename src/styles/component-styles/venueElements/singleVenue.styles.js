@@ -36,11 +36,12 @@ export const SingleVenueParagraph = styled.p`
 export const MoreInfoDiv = styled.div`
     display: flex;
     width: 75vw;
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: space-evenly;
 `;
 
 export const AmenitiesDiv = styled.div`
-    
+    width: 350px;
 `;
 
 export const AmenitiesItem = styled.p`
