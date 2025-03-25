@@ -27,7 +27,7 @@ export function LoginUserForm(params: any) {
     useEffect(() => {
         trigger();
         setTitle("Log In");
-        setDescription("Login page")
+        setDescription("Log in to Holidaze");
     }, [trigger]);
     
     function onSubmit(data:any){
