@@ -16,7 +16,9 @@ const schema = yup.object({
     password: yup.string().required(passwordErrorMsg)
 }).required();
 
-export function LoginUserForm() {
+export function LoginUserForm(params: any) {
+    const {setTitle, setDescription} = params;
+    
     const { register, handleSubmit, formState: { errors, isDirty, isValid }, trigger } = useForm({
         resolver: yupResolver(schema),
         mode: "onChange"
@@ -24,6 +26,8 @@ export function LoginUserForm() {
 
     useEffect(() => {
         trigger();
+        setTitle("Log In");
+        setDescription("Login page")
     }, [trigger]);
     
     function onSubmit(data:any){

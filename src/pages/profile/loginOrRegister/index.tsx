@@ -8,9 +8,8 @@ export function LoginOrRegister() {
     const [description, setDescription] = useState("");   
     // const authUrl = `https://v2.api.noroff.dev/auth`;
 
-
     return <main>
         <Metadata title={title} description={description}/>
-        <LoginUserForm />
+        <LoginUserForm setTitle={setTitle} setDescription={setDescription}/>
     </main>
 }
