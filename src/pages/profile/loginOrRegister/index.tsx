@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Metadata } from "../../../components/metadata/metadata";
 //@ts-ignore
+import { LoginUserForm } from "../../../components/loginOrRegisterComp/register";
 
 export function LoginOrRegister() {    
     const [title, setTitle] = useState("");
@@ -10,6 +11,6 @@ export function LoginOrRegister() {
 
     return <main>
         <Metadata title={title} description={description}/>
-        <div>LOGIN OR REGISTER</div>
+        <LoginUserForm />
     </main>
 }

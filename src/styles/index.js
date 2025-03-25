@@ -6,3 +6,4 @@ export * as topVenueStyles from "./component-styles/venueElements/topVenue.style
 export * as allVenuesStyles from "./component-styles/venueElements/allVenues.styles.js";
 export * as buttons from "./component-styles/buttonsAndCTAs/buttons.styles.js";
 export * as singleVenueStyles from "./component-styles/venueElements/singleVenue.styles.js";
+export * as LoginRegister from "./component-styles/forms/registerAndLogin.style.js";
