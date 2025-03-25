@@ -2,7 +2,7 @@ import { Route, Routes } from "react-router-dom";
 //@ts-ignore
 import { LoginOrRegister } from "./loginOrRegister";
 import { Profile } from "./profile";
-import useLoggedInStore from "../../store/loggedInStore";
+import useLoggedInStore from "../../zustandStores/loggedInStore";
 
 export function ProfileRouter() {
     const { loggedIn } = useLoggedInStore();
