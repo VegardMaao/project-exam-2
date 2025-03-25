@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Metadata } from "../../../components/metadata/metadata";
 //@ts-ignore
-import { LoginUserForm } from "../../../components/loginOrRegisterComp/register";
+import { LoginUserForm } from "../../../components/loginOrRegisterComp/login";
 
 export function LoginOrRegister() {    
     const [title, setTitle] = useState("");
