@@ -2,13 +2,23 @@ import styled from "styled-components";
 import { device } from "../../BreakPoints";
 import { theme } from "../../theme";
 
+export const flexBox = styled.div`
+    display: flex;
+    justify-content: space-evenly;
+    max-width: 90vw;
+    margin: auto;
+
+    @media${device.sm}{
+    flex-direction: column;
+    }
+`;
+
 export const LoginRegisterForm = styled.form`
-    padding-top: 20vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
-    height: 30vh;
+    margin: 10vh auto;
 `;
 
 export const FormLabel = styled.label`
@@ -23,8 +33,8 @@ export const FormInput = styled.input`
     padding: 0.7rem;
 
     &:focus{
-    background: ${theme.color.blue};
-    color: ${theme.color.offwhite}
+    background: ${theme.color.orange}; 
+    color: ${theme.color.blue};
     }
 `;
 
