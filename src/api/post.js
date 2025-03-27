@@ -1,6 +1,6 @@
 import {useState, useEffect} from "react";
 
-export default function usePostAPI(urlParam) {
+export default function usePostAPI(urlParam, userData) {
     const [data, setData] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
     const [isError, setIsError] = useState(false);
@@ -10,7 +10,10 @@ export default function usePostAPI(urlParam) {
             try {
                 setIsError(false);   
                 setIsLoading(true); 
-                const response = await fetch(urlParam);
+                const response = await fetch(urlParam, {
+                    method: `POST`,
+                    body: JSON.stringify(userData)
+                });
                 const json = await response.json();
                 setData(json.data);
                 setIsLoading(false);
