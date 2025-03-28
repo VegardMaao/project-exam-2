@@ -6,16 +6,17 @@ import { RegisterUserForm } from "../../../components/loginOrRegisterComp/regist
 //@ts-ignore
 import { LoginRegister } from "../../../styles";
 
-export function LoginOrRegister() {    
-    const [title, setTitle] = useState("");
-    const [description, setDescription] = useState("");   
-    const authUrl = `https://v2.api.noroff.dev/auth`;
+export function LoginOrRegister() {
+  const [title, setTitle] = useState("");
+  const [description, setDescription] = useState("");
 
-    return <main>
-        <Metadata title={title} description={description}/>
-        <LoginRegister.flexBox>
-        <LoginUserForm setTitle={setTitle} setDescription={setDescription} baseUrl={authUrl}/>
-        <RegisterUserForm setTitle={setTitle} setDescription={setDescription} baseUrl={authUrl} />
-        </LoginRegister.flexBox>
+  return (
+    <main>
+      <Metadata title={title} description={description} />
+      <LoginRegister.flexBox>
+        <LoginUserForm setTitle={setTitle} setDescription={setDescription} />
+        <RegisterUserForm setTitle={setTitle} setDescription={setDescription} />
+      </LoginRegister.flexBox>
     </main>
+  );
 }

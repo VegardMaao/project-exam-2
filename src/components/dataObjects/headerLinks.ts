@@ -1,14 +1,18 @@
 export const headerLinks = [
   {
     title: "Home",
-    href: "/"
-  }, {
+    href: "/",
+  },
+  {
     title: "Venue",
-    href: "/venues"
-  },{
+    href: "/venues",
+  },
+  {
     title: "My Page",
-    href: "/profile"
-  },{
+    href: "/profile",
+  },
+  {
     title: "About",
-    href: "/About"
-  }]
+    href: "/About",
+  },
+];

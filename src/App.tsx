@@ -4,12 +4,12 @@ import { PageRouter } from "./pages/index.tsx";
 import { GlobalStyle } from "./styles/index.js";
 
 function App() {
-  return(
+  return (
     <HelmetProvider>
-    <GlobalStyle />
-    <PageRouter />
-  </HelmetProvider>
-  )
+      <GlobalStyle />
+      <PageRouter />
+    </HelmetProvider>
+  );
 }
 
 export default App;

@@ -1,1 +1,1 @@
-export * as venueInterfaces from "./venues.ts"
+export * as venueInterfaces from "./venues.ts";

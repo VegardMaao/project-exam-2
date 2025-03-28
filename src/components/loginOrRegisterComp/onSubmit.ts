@@ -1,24 +1,24 @@
-//@ts-ignore
-import { usePostAPI } from "../../api/index.js";
+// //@ts-ignore
+// import { usePostAPI } from "../../api/index.ts";
 
-export function onSubmit(formData:any){
-    console.log(formData);
-    const { url } = formData;
-    const userData = formData;
-    delete userData.url;
+// export function onSubmit(formData:any){
+//     console.log(formData);
+//     const { url } = formData;
+//     const userData = formData;
+//     delete userData.url;
 
-    console.log(userData);
-    console.log(url);   
+//     console.log(userData);
+//     console.log(url);
 
-    const { data, isLoading, isError } = usePostAPI(url, userData);
+//     const { data, isLoading, isError } = usePostAPI(url, userData);
 
-    if(isLoading){
-    console.log("loading");
-    }
-    if (isError) {
-        console.log("error");
-        
-    }
+//     if(isLoading){
+//     console.log("loading");
+//     }
+//     if (isError) {
+//         console.log("error");
 
-    console.log(data);
-}
+//     }
+
+//     console.log(data);
+// }

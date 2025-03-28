@@ -21,4 +21,3 @@ export const GlobalStyle = createGlobalStyle`
     min-height: calc(100vh - 210px);
   }
 `;
-
