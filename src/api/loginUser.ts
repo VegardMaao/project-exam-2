@@ -1,10 +1,6 @@
 import { authUrl } from "../environment";
 import { postData } from "./post";
-
-export interface LoginUserData {
-  password: string;
-  email: string;
-}
+import { LoginUserData } from "../components/interfaces/loginAndRegisterInterface";
 
 export const loginUser = async (userData: LoginUserData) => {
   const loginUrl = `${authUrl}/login`;

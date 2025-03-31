@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import { useForm } from "react-hook-form";
@@ -6,7 +6,8 @@ import { useForm } from "react-hook-form";
 import { buttons, LoginRegister as S } from "../../styles";
 //@ts-ignore
 import { emailRegex } from "../regex";
-import { registerUser, RegisterUserData } from "../../api/registerUser";
+import { registerUser } from "../../api/registerUser";
+import { RegisterUserData } from "../interfaces/loginAndRegisterInterface";
 
 const userErrorMsg = "name must be at least 3 letters, max 15";
 const emailErrorMsg = "A valid Noroff email is required";

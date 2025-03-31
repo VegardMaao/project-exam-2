@@ -6,7 +6,8 @@ import { useForm } from "react-hook-form";
 import { buttons, LoginRegister as S } from "../../styles";
 //@ts-ignore
 import { emailRegex } from "../regex";
-import { loginUser, LoginUserData } from "../../api/loginUser";
+import { loginUser } from "../../api/loginUser";
+import { LoginUserData } from "../interfaces/loginAndRegisterInterface";
 
 const emailErrorMsg = "A valid Noroff email is required";
 const passwordErrorMsg = "Password is required";
