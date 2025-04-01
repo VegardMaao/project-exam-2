@@ -5,7 +5,7 @@ import { headerLinks } from "../dataObjects";
 // @ts-ignore
 import { headerStyles } from "../../styles/index.js";
 // @ts-ignore
-import { Logo } from "./Logo";
+import { Logo } from "./logo";
 
 function Nav() {
   const { pathname } = useLocation();
