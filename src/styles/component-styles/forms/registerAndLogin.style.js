@@ -4,13 +4,11 @@ import { theme } from "../../theme";
 
 export const flexBox = styled.div`
   display: flex;
+  flex-direction: column;
   justify-content: space-evenly;
+  align-items: center;
   max-width: 90vw;
   margin: auto;
-
-  @media${device.sm} {
-    flex-direction: column;
-  }
 `;
 
 export const LoginRegisterForm = styled.form`

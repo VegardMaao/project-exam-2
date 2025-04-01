@@ -1,6 +1,8 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment */
 import { Route, Routes } from "react-router-dom";
 //@ts-ignore
-import { LoginOrRegister } from "./loginOrRegister";
+import { LoginPage } from "./profile/loginOrRegister/login";
+import { RegisterPage } from "./profile/loginOrRegister/register";
 import { Profile } from "./profile";
 import useLoggedInStore from "../../zustandStores/loggedInStore";
 
@@ -15,7 +17,8 @@ export function ProfileRouter() {
   } else {
     return (
       <Routes>
-        <Route path="/" element={<LoginOrRegister />} />
+        <Route path="/" element={<LoginPage />} />
+        <Route path="register" element={<RegisterPage />} />
       </Routes>
     );
   }

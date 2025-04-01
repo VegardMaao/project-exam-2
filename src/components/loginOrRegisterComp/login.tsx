@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable @typescript-eslint/ban-ts-comment */
 import { useEffect } from "react";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
@@ -43,7 +45,7 @@ export function LoginUserForm(params: any) {
 
   const onSubmit = async (e: Event) => {
     e.preventDefault();
-    let formData = getValues();
+    const formData = getValues();
     try {
       await loginUser(formData);
     } catch (e: any) {

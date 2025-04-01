@@ -7,7 +7,7 @@ interface LoginState {
 }
 
 const useLoggedInStore = create<LoginState>()((set) => ({
-  loggedIn: false,
+  loggedIn: true,
   logIn: () =>
     set(() => {
       return {

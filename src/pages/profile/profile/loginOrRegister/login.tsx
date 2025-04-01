@@ -1,12 +1,13 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment */
 import { useState } from "react";
-import { Metadata } from "../../../components/metadata/metadata";
+import { Metadata } from "../../../../components/metadata/metadata";
+import { Link } from "react-router-dom";
 //@ts-ignore
-import { LoginUserForm } from "../../../components/loginOrRegisterComp/login";
-import { RegisterUserForm } from "../../../components/loginOrRegisterComp/register";
+import { LoginUserForm } from "../../../../components/loginOrRegisterComp/login";
 //@ts-ignore
-import { LoginRegister } from "../../../styles";
+import { LoginRegister } from "../../../../styles";
 
-export function LoginOrRegister() {
+export function LoginPage() {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
 
@@ -15,7 +16,7 @@ export function LoginOrRegister() {
       <Metadata title={title} description={description} />
       <LoginRegister.flexBox>
         <LoginUserForm setTitle={setTitle} setDescription={setDescription} />
-        <RegisterUserForm setTitle={setTitle} setDescription={setDescription} />
+        <Link to={"register"}>Register a new user</Link>
       </LoginRegister.flexBox>
     </main>
   );

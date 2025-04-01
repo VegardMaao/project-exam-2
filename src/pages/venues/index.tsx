@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment */
 import { useState } from "react";
 import { Metadata } from "../../components/metadata/metadata";
 import { useParams } from "react-router-dom";

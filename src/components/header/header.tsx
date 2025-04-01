@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment */
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { headerLinks } from "../dataObjects";
