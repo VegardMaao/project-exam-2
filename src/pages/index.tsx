@@ -10,7 +10,7 @@ export const PageRouter = () => {
       <Route path="/" element={<Layout />}>
         <Route index element={<Home />} />
         <Route path="venues/:id" element={<Venue />} />
-        <Route path="profile" element={<ProfileRouter />} />
+        <Route path="profile/*" element={<ProfileRouter />} />
       </Route>
     </Routes>
   );
