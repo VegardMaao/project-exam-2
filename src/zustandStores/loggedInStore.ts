@@ -22,6 +22,7 @@ const useLoggedInStore = create<LoginState>()(persist(
       }),
     logOut: () =>
       set(() => {
+        localStorage.clear();
         return {
           loggedIn: false,
           accessToken: undefined
