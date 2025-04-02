@@ -10,6 +10,7 @@ import { buttons, LoginRegister as S } from "../../styles";
 import { emailRegex } from "../regex";
 import { loginUser } from "../../api/loginUser";
 import { LoginUserData } from "../interfaces/loginAndRegisterInterface";
+import useLoggedInStore from "../../zustandStores/loggedInStore";
 
 const emailErrorMsg = "A valid Noroff email is required";
 const passwordErrorMsg = "Password is required";
@@ -28,6 +29,7 @@ const schema = yup
 
 export function LoginUserForm(params: any) {
   const { setTitle, setDescription } = params;
+  const { logIn } = useLoggedInStore();
 
   const {
     register,
@@ -48,6 +50,7 @@ export function LoginUserForm(params: any) {
     const formData = getValues();
     try {
       await loginUser(formData);
+      logIn();
     } catch (e: any) {
       console.error(e.message);
     }
