@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { device } from "../../BreakPoints";
+import { theme } from "../../theme";
 
 export const ProfileWrapper = styled.div`
     display: flex;
@@ -16,4 +17,9 @@ export const BannerImg = styled.div`
     height: 30vh;
     width: 100vw;
     margin: auto;
+`;
+
+export const AvatarImg = styled.img`
+    border: 2px solid ${theme.color.black};
+    max-height: 200px;
 `;

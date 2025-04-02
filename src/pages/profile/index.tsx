@@ -12,7 +12,8 @@ export function ProfileRouter() {
     return (
       <Routes>
         <Route path="/" element={<Profile />} />
-        <Route path="/:name" element={<Profile />} />
+        <Route path=":name" element={<Profile />} />
+        <Route path="/undefined" element={<Profile />} />
       </Routes>
     );
   } else {
@@ -20,6 +21,7 @@ export function ProfileRouter() {
       <Routes>
         <Route path="/" element={<LoginPage />} />
         <Route path="register" element={<RegisterPage />} />
+        <Route path="/*" element={<LoginPage />} />
       </Routes>
     );
   }

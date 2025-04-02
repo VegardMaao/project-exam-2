@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment */
 import { Metadata } from "../../components/metadata/metadata";
 //@ts-ignore
 import { featured, all } from "../../components/venueComponents/index";

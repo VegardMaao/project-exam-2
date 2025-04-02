@@ -9,9 +9,10 @@ import { Logo } from "./logo";
 import useLoggedInStore from "../../zustandStores/loggedInStore.js";
 
 function Nav() {
-  const { loggedIn, logOut } = useLoggedInStore();
+  const { loggedIn, logOut, getName } = useLoggedInStore();
   const { pathname } = useLocation();
   const [showMenu, setShowMenu] = useState(false);
+  const loggedInUserName = getName();
 
   const LogOutBtn = () => {
     if (loggedIn) {
@@ -35,7 +36,7 @@ function Nav() {
           <S.StyledNavLink
             className={pathname === link.title ? "active" : ""}
             key={link.title}
-            to={link.href}
+            to={link.title === "Profile" ? `${link.href}/${loggedInUserName}` : link.href}
           >
             {link.title}
           </S.StyledNavLink>

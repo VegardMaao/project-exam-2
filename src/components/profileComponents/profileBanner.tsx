@@ -1,11 +1,16 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
-/* eslint-disable @typescript-eslint/no-explicit-any */
-//@ts-ignore
-import { dummyData } from "./dummyJSON.js"
-//@ts-ignore
-import { ProfileElem as S } from "../../styles"
 
-export function ProfileBanner() {
-    console.log(dummyData);
-    return  <S.BannerImg url={dummyData.data.banner.url} />
+//@ts-ignore
+import { ProfileElem as S } from "../../styles";
+
+interface Banner {
+    bannerInfo: {
+        url: string,
+        alt: string
+    }
+}
+
+export function ProfileBanner(bannerInfo: Banner) {
+    const info = bannerInfo.bannerInfo;
+    return  <S.BannerImg url={info.url} alt={info.alt}/>
 }
