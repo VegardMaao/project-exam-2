@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment */
 import { useEffect, useState } from "react";
 // @ts-ignore
 import { sortByRating } from "../../sortArrays/sortArrays.js";

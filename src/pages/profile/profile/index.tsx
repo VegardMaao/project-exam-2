@@ -6,10 +6,11 @@ import { profilesUrl } from "../../../environment";
 import { loadingStyles } from "../../../styles"
 
 export function Profile() {
-  const url = `${profilesUrl}`
-  const { data, isLoading, isError } = useGetAPI(url);
 
-  
+  // will add name via route like with venues
+  const url = profilesUrl;
+
+  const { data, isLoading, isError } = useGetAPI(url);
   if (isLoading) {
     return <loadingStyles.Loader />;
   }

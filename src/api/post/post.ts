@@ -11,6 +11,7 @@ export const postData = async (url: string, data: any) => {
   const response = await fetch(url, req);
   const json = await response.json();
   localStorage.setItem(`accessToken`, `${json.data.accessToken}`)
+  localStorage.setItem(`userName`, `${json.data.name}`);
   return json;
 };
 

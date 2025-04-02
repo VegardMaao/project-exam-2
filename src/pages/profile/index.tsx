@@ -12,6 +12,7 @@ export function ProfileRouter() {
     return (
       <Routes>
         <Route path="/" element={<Profile />} />
+        <Route path="/:name" element={<Profile />} />
       </Routes>
     );
   } else {

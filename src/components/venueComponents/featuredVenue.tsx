@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment */
 // @ts-ignore
 import { useGetAPI } from "../../api/index.ts";
 // @ts-ignore
