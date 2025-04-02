@@ -8,6 +8,10 @@ export const headerLinks = [
     href: "/venues",
   },
   {
+    title: "Profile",
+    href: "/profile",
+  },
+  {
     title: "About",
     href: "/About",
   },

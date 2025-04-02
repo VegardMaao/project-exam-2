@@ -25,6 +25,11 @@ export const NavbarWrapper = styled.nav`
     color: ${theme.color.orange};
   }
 
+  .inactive {
+    background: ${theme.color.offwhite};
+    color: ${theme.color.blue};
+  }
+
   @media (${device.sm}) {
     flex-direction: column;
     padding: 1rem;

@@ -15,7 +15,7 @@ function Nav() {
 
   const LogOutBtn = () => {
     if (loggedIn) {
-      return <S.StyledNavLink to="" onClick={logOut} >Log Out</S.StyledNavLink>
+      return <S.StyledNavLink className="inactive" onClick={logOut} >Log Out</S.StyledNavLink>
     } else {
       return <S.StyledNavLink to={"/profile"} >Log In</S.StyledNavLink>
     }
