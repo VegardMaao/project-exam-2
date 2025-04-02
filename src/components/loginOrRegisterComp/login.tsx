@@ -8,7 +8,7 @@ import { useForm } from "react-hook-form";
 import { buttons, LoginRegister as S } from "../../styles";
 //@ts-ignore
 import { emailRegex } from "../regex";
-import { loginUser } from "../../api/loginUser";
+import { loginUser } from "../../api/post/loginUser";
 import { LoginUserData } from "../interfaces/loginAndRegisterInterface";
 import useLoggedInStore from "../../zustandStores/loggedInStore";
 

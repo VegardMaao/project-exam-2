@@ -8,7 +8,7 @@ import { useForm } from "react-hook-form";
 import { buttons, LoginRegister as S } from "../../styles";
 //@ts-ignore
 import { emailRegex } from "../regex";
-import { registerUser } from "../../api/registerUser";
+import { registerUser } from "../../api/post/registerUser";
 import { RegisterUserData } from "../interfaces/loginAndRegisterInterface";
 
 const userErrorMsg = "name must be at least 3 letters, max 15";

@@ -1,13 +1,32 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
-import {BannerComp} from "../../../components/profileComponents/index.ts"
+// import {BannerComp} from "../../../components/profileComponents/index.ts"
+import { useGetAPI } from "../../../api";
+import { profilesUrl } from "../../../environment";
 //@ts-ignore
-import { ProfileElem as S } from "../../../styles"
+import { loadingStyles } from "../../../styles"
 
 export function Profile() {
-  return <main>
-    <S.ProfileWrapper>
-    <BannerComp.ProfileBanner />
+  const url = `${profilesUrl}`
+  const { data, isLoading, isError } = useGetAPI(url);
+
+  
+  if (isLoading) {
+    return <loadingStyles.Loader />;
+  }
+
+  if (isError) {
+    return <div>Error loading data</div>;
+  }
+
+  console.log(data)
+
+
+  return <div>HELLO</div>
+
+  // return <main>
+  //   <S.ProfileWrapper>
+  //   <BannerComp.ProfileBanner />
     
-    </S.ProfileWrapper>
-    </main>;
+  //   </S.ProfileWrapper>
+  //   </main>;
 };

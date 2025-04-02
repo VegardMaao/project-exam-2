@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { getHeaders } from "./getHeaders";
+import { getHeaders } from "../getHeaders";
 
 export const postData = async (url: string, data: any) => {
   const body = data;
