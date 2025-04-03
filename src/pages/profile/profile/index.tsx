@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
-import {BannerComp, AvatarComp} from "../../../components/profileComponents/index.ts"
+import {BannerComp, AvatarComp, ProfileSummary} from "../../../components/profileComponents/index.ts"
 import { useGetAPI } from "../../../api";
 import { useParams } from "react-router-dom";
 import { profilesUrl } from "../../../environment";
@@ -9,10 +9,10 @@ import { loadingStyles, ProfileElem as S } from "../../../styles"
 
 export function Profile() {
   const  { getName } = useLoggedInStore();
-  const { name } = useParams();  
+  const { name: userName } = useParams();  
   const urlFunc = () => {
-    if (name) {
-      return `${profilesUrl}/${name}`;
+    if (userName) {
+      return `${profilesUrl}/${userName}`;
     } else {
       const nameFromStore = getName();
       return `${profilesUrl}/${nameFromStore}`;
@@ -32,14 +32,16 @@ export function Profile() {
 
   if (data.name) {
   console.log(data)
-  const { banner, avatar, name } = data;
-  console.log(name);
+  const { banner, avatar, name, email, bio } = data;
   
   
   return <main>
     <S.ProfileWrapper>
     <BannerComp.ProfileBanner bannerInfo={banner} />
+    <S.AvatarAndSummaryWrapper>
     <AvatarComp.ProfileAvatar avatarInfo={avatar} />
+    <ProfileSummary.ProfileSummary name={name} email={email} bio={bio} />
+    </S.AvatarAndSummaryWrapper>
     </S.ProfileWrapper>
     </main>;
 

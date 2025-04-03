@@ -19,7 +19,38 @@ export const BannerImg = styled.div`
     margin: auto;
 `;
 
+export const AvatarAndSummaryWrapper = styled.div`
+    display: flex;
+    width: 75vw;
+    justify-content: space-around;
+    align-items: center;
+    position: relative;
+    top: -6rem;
+
+    @media(${device.sm}){
+        flex-direction: column;
+    }
+    `;
+
 export const AvatarImg = styled.img`
     border: 2px solid ${theme.color.black};
     max-height: 200px;
+
 `;
+
+export const ProfileSummaryWrapper = styled.div`
+    display: flex;
+    flex-direction: row;
+`;
+
+export const ProfileName = styled.h1`
+    background: #fefefe4d;
+    padding: 10px;
+    border-radius: 15px;
+`;
+
+export const ProfileBio = styled.p`
+    padding: 1rem;
+    ${(display) => display};
+`;
+
