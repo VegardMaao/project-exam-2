@@ -35,7 +35,7 @@ const useLoggedInStore = create<LoginState>()(persist(
       }),
     getToken: () => {
       const token = get().accessToken;
-      return token; 
+      return token;
     },
     getName: () => {
       const name = get().userName;

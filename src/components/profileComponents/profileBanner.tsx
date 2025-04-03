@@ -4,13 +4,13 @@
 import { ProfileElem as S } from "../../styles";
 
 interface Banner {
-    bannerInfo: {
-        url: string,
-        alt: string
-    }
+  bannerInfo: {
+    url: string;
+    alt: string;
+  };
 }
 
 export function ProfileBanner(bannerInfo: Banner) {
-    const info = bannerInfo.bannerInfo;
-    return  <S.BannerImg url={info.url} alt={info.alt}/>
+  const info = bannerInfo.bannerInfo;
+  return <S.BannerImg url={info.url} alt={info.alt} />;
 }

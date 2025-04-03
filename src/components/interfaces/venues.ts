@@ -31,4 +31,4 @@ export interface Venue {
   prevState: undefined;
 }
 
-export interface VenuesArr extends Array<Venue> {}
+export interface VenuesArr extends Array<Venue> { }

@@ -8,4 +8,3 @@ export interface LoginUserData {
 export interface RegisterUserData extends LoginUserData {
     name: string;
 }
-  

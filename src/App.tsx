@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment */
 import { HelmetProvider } from "react-helmet-async";
 import { PageRouter } from "./pages/index.tsx";
 // @ts-ignore

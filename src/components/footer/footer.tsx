@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable @typescript-eslint/ban-ts-comment */
 import { footerText, footerIcons } from "../dataObjects";
 // @ts-ignore
 import { footerStyles } from "../../styles/index.js";

@@ -16,11 +16,15 @@ function Nav() {
 
   const LogOutBtn = () => {
     if (loggedIn) {
-      return <S.StyledNavLink className="inactive" onClick={logOut} >Log Out</S.StyledNavLink>
+      return (
+        <S.StyledNavLink className="inactive" onClick={logOut}>
+          Log Out
+        </S.StyledNavLink>
+      );
     } else {
-      return <S.StyledNavLink to={"/profile"} >Log In</S.StyledNavLink>
+      return <S.StyledNavLink to={"/profile"}>Log In</S.StyledNavLink>;
     }
-  }
+  };
 
   return (
     <S.NavbarWrapper>
@@ -36,12 +40,16 @@ function Nav() {
           <S.StyledNavLink
             className={pathname === link.title ? "active" : ""}
             key={link.title}
-            to={link.title === "Profile" ? `${link.href}/${loggedInUserName}` : link.href}
+            to={
+              link.title === "Profile"
+                ? `${link.href}/${loggedInUserName}`
+                : link.href
+            }
           >
             {link.title}
           </S.StyledNavLink>
         ))}
-      <LogOutBtn />
+        <LogOutBtn />
       </S.NavLinkWrapper>
     </S.NavbarWrapper>
   );
