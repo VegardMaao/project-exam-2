@@ -8,3 +8,4 @@ export * as buttons from "./component-styles/buttonsAndCTAs/buttons.styles.js";
 export * as singleVenueStyles from "./component-styles/venueElements/singleVenue.styles.js";
 export * as LoginRegister from "./component-styles/forms/registerAndLogin.style.js";
 export * as ProfileElem from "./component-styles/profile/profileElements.js";
+export * as BookingFormStyles from "./component-styles/forms/bookingForm.style.js"

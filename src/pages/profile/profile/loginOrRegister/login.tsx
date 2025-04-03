@@ -3,7 +3,7 @@ import { useState } from "react";
 import { Metadata } from "../../../../components/metadata/metadata";
 import { Link } from "react-router-dom";
 //@ts-ignore
-import { LoginUserForm } from "../../../../components/loginOrRegisterComp/login";
+import { LoginUserForm } from "../../../../components/forms/login";
 //@ts-ignore
 import { LoginRegister } from "../../../../styles";
 

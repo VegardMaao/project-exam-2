@@ -2,13 +2,14 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 // @ts-ignore
 import { buttons, singleVenueStyles as S } from "../../../styles/index.js";
-import { SetAmenities } from "./minorComponents/setAmenities.js";
-
+import { BookingForm } from "../../forms/bookVenueForm.tsx";
+import { SetAmenities } from "./minorComponents/setAmenities.tsx";
 
 export function DisplaySingleVenue(venueInfo: any) {
   if (venueInfo.venueInfo.name) {
     const {
       description,
+      id,
       location,
       maxGuests,
       name,
@@ -34,6 +35,7 @@ export function DisplaySingleVenue(venueInfo: any) {
         <S.SingleVenueHeading>{name}</S.SingleVenueHeading>
         <S.SingleVenueParagraph>{description}</S.SingleVenueParagraph>
         <S.SingleVenueParagraph>{`Costs ${price} dollars per night, rated ${rating} of 5. There have been ${_count.bookings} bookings of this venue so far.`}</S.SingleVenueParagraph>
+        <BookingForm guests={maxGuests} id={id} />
         <buttons.ButtonComponent colors="primary" size="big">
           Book this venue
         </buttons.ButtonComponent>
