@@ -6,6 +6,7 @@ import { profilesUrl } from "../../../environment";
 import useLoggedInStore from "../../../zustandStores/loggedInStore.ts";
 //@ts-ignore
 import { loadingStyles, ProfileElem as S } from "../../../styles"
+import { VenueManager } from "../../../components/profileComponents/venueManager.tsx";
 
 export function Profile() {
   const  { getName } = useLoggedInStore();
@@ -32,8 +33,9 @@ export function Profile() {
 
   if (data.name) {
   console.log(data)
-  const { banner, avatar, name, email, bio } = data;
-  
+  const { banner, avatar, name, email, bio, venueManager } = data;
+ 
+  const venuesUrl = `${url}/venues`;
   
   return <main>
     <S.ProfileWrapper>
@@ -42,6 +44,7 @@ export function Profile() {
     <AvatarComp.ProfileAvatar avatarInfo={avatar} />
     <ProfileSummary.ProfileSummary name={name} email={email} bio={bio} />
     </S.AvatarAndSummaryWrapper>
+    <VenueManager managerBool={venueManager} url={venuesUrl}/>
     </S.ProfileWrapper>
     </main>;
 

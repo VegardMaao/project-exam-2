@@ -54,3 +54,21 @@ export const ProfileBio = styled.p`
     ${(display) => display};
 `;
 
+export const VenueManagerWrapper = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+`;
+
+export const VenuesList = styled.ul`
+    margin: 0px;
+    padding: 10px 0px;
+
+    li {
+        list-style: none;
+    }
+`;
+
+export const VenueName = styled.h3`
+    text-decoration: none;
+`;

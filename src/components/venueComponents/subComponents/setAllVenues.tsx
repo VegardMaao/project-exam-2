@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment */
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { VenuesArr } from "../../interfaces/venues.js";
