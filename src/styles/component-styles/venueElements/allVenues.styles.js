@@ -17,6 +17,7 @@ export const AllVenuesDiv = styled.div`
   width: 70vw;
   max-width: 1100px;
   margin: auto;
+  justify-items: center;
 
   @media${device.sm} {
     width: 100vw;
