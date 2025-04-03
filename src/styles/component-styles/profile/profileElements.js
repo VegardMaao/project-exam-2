@@ -71,4 +71,5 @@ export const VenuesList = styled.ul`
 
 export const VenueName = styled.h3`
     text-decoration: none;
+    text-align: start;
 `;
