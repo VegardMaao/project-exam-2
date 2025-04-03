@@ -54,12 +54,16 @@ export function BookingForm(params: params) {
   const onSubmit = async (e: Event) => {
     e.preventDefault();
     const formData = getValues();
-    console.log(formData);
-    console.log(typeof formData.guests);
     try {
       await createBooking(formData);
+      return <div>Hello world</div>;
     } catch (e: any) {
       console.error(e.message);
+      return (
+        <div>
+          <p>{e.message}</p>
+        </div>
+      );
     }
   };
 
