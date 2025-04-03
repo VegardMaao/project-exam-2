@@ -1,6 +1,9 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable @typescript-eslint/ban-ts-comment */
 // @ts-ignore
 import { buttons, singleVenueStyles as S } from "../../../styles/index.js";
 import { SetAmenities } from "./minorComponents/setAmenities.js";
+
 
 export function DisplaySingleVenue(venueInfo: any) {
   if (venueInfo.venueInfo.name) {
