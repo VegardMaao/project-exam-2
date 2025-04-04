@@ -36,7 +36,6 @@ export function Profile() {
   }
 
   if (data.name) {
-    console.log(data);
     const { banner, avatar, name, email, bio, venueManager } = data;
 
     const venuesUrl = `${url}/venues`;

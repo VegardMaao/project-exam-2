@@ -12,7 +12,6 @@ interface VenueManagerInterFace {
 
 export function VenueManager(params: VenueManagerInterFace) {
   const { managerBool, url } = params;
-  console.log(url);
   const { data, isLoading, isError } = useGetAPI(url);
 
   if (managerBool) {
@@ -23,16 +22,13 @@ export function VenueManager(params: VenueManagerInterFace) {
     if (isError) {
       return <div>Error loading data</div>;
     }
-
-    console.log(data);
-
     return (
       <S.VenueManagerWrapper>
         <h2>User manages these venues</h2>
         <S.VenuesList>
           {data.map((venue: Venue) => (
-            <li>
-              <Link key={venue.id} to={`/venues/${venue.id}`}>
+            <li key={venue.id}>
+              <Link to={`/venues/${venue.id}`}>
                 <S.VenueName>{venue.name}</S.VenueName>
               </Link>
             </li>
