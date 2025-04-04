@@ -55,8 +55,11 @@ export function RegisterUserForm(params: any) {
     formData.name = formData.name.trim();
     try {
       await registerUser(formData);
-    } catch (e: any) {
-      console.error(e.message);
+    } catch (error: any) {
+      console.dir(error);
+      if (error instanceof Error) {
+        return alert(error.message);
+      }
     }
   };
 

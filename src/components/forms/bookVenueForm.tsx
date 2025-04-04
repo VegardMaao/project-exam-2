@@ -56,7 +56,6 @@ export function BookingForm(params: params) {
     const formData = getValues();
     try {
       await createBooking(formData);
-      return <div>Hello world</div>;
     } catch (e: any) {
       console.error(e.message);
       return (

@@ -51,8 +51,11 @@ export function LoginUserForm(params: any) {
     try {
       await loginUser(formData);
       logIn();
-    } catch (e: any) {
-      console.error(e.message);
+    } catch (error: any) {
+      console.dir(error);
+      if (error instanceof Error) {
+        return alert(error.message);
+      }
     }
   };
 
