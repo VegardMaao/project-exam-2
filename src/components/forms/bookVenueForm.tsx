@@ -56,13 +56,11 @@ export function BookingForm(params: params) {
     const formData = getValues();
     try {
       await createBooking(formData);
-    } catch (e: any) {
-      console.error(e.message);
-      return (
-        <div>
-          <p>{e.message}</p>
-        </div>
-      );
+    } catch (error: any) {
+      console.dir(error);
+      if (error instanceof Error) {
+        return alert(error.message);
+      }
     }
   };
 
