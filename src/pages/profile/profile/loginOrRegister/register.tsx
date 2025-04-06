@@ -15,7 +15,7 @@ export function RegisterPage() {
       <Metadata title={title} description={description} />
       <LoginRegister.flexBox>
         <RegisterUserForm setTitle={setTitle} setDescription={setDescription} />
-        <Link to={"login"}>Or log in to an existing user</Link>
+        <Link to={"/profile/login"}>Or log in to an existing user</Link>
       </LoginRegister.flexBox>
     </main>
   );

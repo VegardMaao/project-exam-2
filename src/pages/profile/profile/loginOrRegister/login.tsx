@@ -16,7 +16,7 @@ export function LoginPage() {
       <Metadata title={title} description={description} />
       <LoginRegister.flexBox>
         <LoginUserForm setTitle={setTitle} setDescription={setDescription} />
-        <Link to={"register"}>Register a new user</Link>
+        <Link to={"/profile/register"}>Register a new user</Link>
       </LoginRegister.flexBox>
     </main>
   );
