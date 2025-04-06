@@ -16,6 +16,7 @@ export const LoginRegisterForm = styled.form`
   align-items: center;
   justify-content: space-around;
   margin: 10vh auto;
+  height: 45vh;
 `;
 
 export const FormLabel = styled.label`
