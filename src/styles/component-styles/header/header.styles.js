@@ -58,6 +58,7 @@ export const NavLinkWrapper = styled.div`
 `;
 
 export const StyledNavLink = styled(NavLink)`
+  display: ${(display) => display.display};
   transition: 0.3s;
   text-decoration: none;
   color: ${theme.color.blue};

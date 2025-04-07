@@ -38,6 +38,11 @@ function Nav() {
       <S.NavLinkWrapper showOnMobile={showMenu}>
         {headerLinks.map((link) => (
           <S.StyledNavLink
+            display={
+              link.title === "Venue" && !pathname.includes("venues")
+                ? "none"
+                : "inline"
+            }
             className={pathname === link.title ? "active" : ""}
             key={link.title}
             to={
