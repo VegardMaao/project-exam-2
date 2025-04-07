@@ -9,20 +9,30 @@ import { useParams } from "react-router-dom";
 import { profilesUrl } from "../../../environment";
 import useLoggedInStore from "../../../zustandStores/loggedInStore.ts";
 //@ts-ignore
-import { loadingStyles, ProfileElem as S } from "../../../styles";
+import { loadingStyles, buttons, ProfileElem as S } from "../../../styles";
 import { VenueManager } from "../../../components/profileComponents/venueManager.tsx";
 
 export function Profile() {
   const { getName } = useLoggedInStore();
+  const nameFromStore = getName();
   const { name: userName } = useParams();
   const urlFunc = () => {
     if (userName) {
       return `${profilesUrl}/${userName}`;
     } else {
-      const nameFromStore = getName();
       return `${profilesUrl}/${nameFromStore}`;
     }
   };
+
+  const userChecker = () => {
+    if (nameFromStore === userName || !userName) {
+      return true;
+    } else {
+      return false;
+    }
+  };
+
+  const myUserBool = userChecker();
 
   const url = urlFunc();
 
@@ -52,6 +62,12 @@ export function Profile() {
               bio={bio}
             />
           </S.AvatarAndSummaryWrapper>
+          <S.EditProfileLink
+            display={myUserBool ? "block" : "none"}
+            to={"/profile/edit"}
+          >
+            <buttons.ButtonComponent>Edit your profile</buttons.ButtonComponent>
+          </S.EditProfileLink>
           <VenueManager managerBool={venueManager} url={venuesUrl} />
         </S.ProfileWrapper>
       </main>

@@ -6,6 +6,7 @@ import { RegisterPage } from "./profile/loginOrRegister/register";
 import { Profile } from "./profile";
 import { ErrorPage } from "../error-page";
 import useLoggedInStore from "../../zustandStores/loggedInStore";
+import { EditProfile } from "./profile/editProfile";
 
 export function ProfileRouter() {
   const { loggedIn } = useLoggedInStore();
@@ -16,6 +17,7 @@ export function ProfileRouter() {
         <Route path=":name" element={<Profile />} />
         <Route path="/undefined" element={<Profile />} />
         <Route path="/login" element={<Profile />} />
+        <Route path="/edit" element={<EditProfile />} />
         <Route path="/*" element={<ErrorPage />} />
       </Routes>
     );

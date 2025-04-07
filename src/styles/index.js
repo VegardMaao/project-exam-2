@@ -10,3 +10,4 @@ export * as LoginRegister from "./component-styles/forms/registerAndLogin.style.
 export * as ProfileElem from "./component-styles/profile/profileElements.js";
 export * as BookingFormStyles from "./component-styles/forms/bookingForm.style.js";
 export * as GenericStyles from "./GenericComponents.styles.js";
+export * as EditProfileStyles from "./component-styles/forms/editProfileForm.style.js";

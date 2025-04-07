@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { device } from "../../BreakPoints";
 import { theme } from "../../theme";
+import { NavLink } from "react-router-dom";
 
 export const ProfileWrapper = styled.div`
   display: flex;
@@ -51,6 +52,10 @@ export const ProfileName = styled.h1`
 export const ProfileBio = styled.p`
   padding: 1rem;
   ${(display) => display};
+`;
+
+export const EditProfileLink = styled(NavLink)`
+  display: ${(display) => display.display};
 `;
 
 export const VenueManagerWrapper = styled.div`

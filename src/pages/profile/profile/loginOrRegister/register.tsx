@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 import { useState } from "react";
 import { Metadata } from "../../../../components/metadata/metadata";
-import { RegisterUserForm } from "../../../../components/forms/register";
+import { RegisterUserForm } from "../../../../components/forms/registerForm";
 //@ts-ignore
 import { LoginRegister } from "../../../../styles";
 import { Link } from "react-router-dom";
