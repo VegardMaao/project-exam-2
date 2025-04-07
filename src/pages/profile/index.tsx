@@ -15,6 +15,7 @@ export function ProfileRouter() {
         <Route path="/" element={<Profile />} />
         <Route path=":name" element={<Profile />} />
         <Route path="/undefined" element={<Profile />} />
+        <Route path="/login" element={<Profile />} />
         <Route path="/*" element={<ErrorPage />} />
       </Routes>
     );
