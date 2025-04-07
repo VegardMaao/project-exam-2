@@ -100,8 +100,12 @@ export function BookingForm(params: params) {
       </S.Form>
     );
   } else {
-    <Link to={`/profile/login`}>
-      <button>Log in to book</button>
-    </Link>;
+    return (
+      <Link to={`/profile/login`}>
+        <buttons.ButtonComponent colors="inverted">
+          Log in to book
+        </buttons.ButtonComponent>
+      </Link>
+    );
   }
 }

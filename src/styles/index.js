@@ -9,3 +9,4 @@ export * as singleVenueStyles from "./component-styles/venueElements/singleVenue
 export * as LoginRegister from "./component-styles/forms/registerAndLogin.style.js";
 export * as ProfileElem from "./component-styles/profile/profileElements.js";
 export * as BookingFormStyles from "./component-styles/forms/bookingForm.style.js";
+export * as ConfirmationStyles from "./component-styles/venueElements/confirmation.styles.js";
