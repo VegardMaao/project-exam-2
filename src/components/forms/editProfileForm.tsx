@@ -20,14 +20,15 @@ const schema = yup
 
 export function EditProfileForm(params: any) {
   const navigate = useNavigate();
-  const {
-    register,
-    getValues,
-    formState: { errors, isDirty, isValid },
-  } = useForm({
+  console.log(navigate);
+
+  const { register } = useForm({
     resolver: yupResolver(schema),
     mode: "onChange",
   });
+
+  //getValues,
+  //formState: { errors, isDirty, isValid },
 
   return (
     <S.EditProfileForm>
