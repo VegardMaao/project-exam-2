@@ -8,7 +8,7 @@ import { useForm } from "react-hook-form";
 import useLoggedInStore from "../../zustandStores/loggedInStore";
 //@ts-ignore
 import { buttons, BookingFormStyles as S } from "../../styles";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { MakeBooking } from "../interfaces/bookingInterFace";
 
 interface params {
@@ -17,6 +17,7 @@ interface params {
 }
 
 export function BookingForm(params: params) {
+  const navigate = useNavigate();
   const today = new Date().toISOString().split("T")[0];
   const [toDate, setToDate] = useState(today);
   const { loggedIn } = useLoggedInStore();
@@ -56,6 +57,7 @@ export function BookingForm(params: params) {
     const formData = getValues();
     try {
       await createBooking(formData);
+      return navigate("/venues/confirmation");
     } catch (error: any) {
       console.dir(error);
       if (error instanceof Error) {
