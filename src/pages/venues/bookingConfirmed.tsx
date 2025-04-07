@@ -1,14 +1,14 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 //@ts-ignore
-import { ConfirmationStyles as S } from "../../styles";
+import { GenericStyles as S } from "../../styles";
 
 export function BookingConfirmed() {
   return (
     <main>
-      <S.ConfirmationWrapper>
+      <S.CenteredFlexBox>
         <h1>Booking confirmed</h1>
         <p>Enjoy your stay!</p>
-      </S.ConfirmationWrapper>
+      </S.CenteredFlexBox>
     </main>
   );
 }

@@ -17,6 +17,16 @@ export const GlobalStyle = createGlobalStyle`
     text-align: center;
   }
 
+  p{
+  font-family: ${theme.fontFamily.copyFont};
+  line-height: 1.5rem;
+  font-weight: 400;
+  }
+  
+  a{
+  text-decoration: none;
+  }
+
   main{
     min-height: calc(100vh - 210px);
   }

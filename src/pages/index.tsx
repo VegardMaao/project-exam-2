@@ -5,6 +5,7 @@ import { Venue } from "./venues";
 import { ProfileRouter } from "./profile/index.tsx";
 import { ErrorPage } from "./error-page/index.tsx";
 import { BookingConfirmed } from "./venues/bookingConfirmed.tsx";
+import { AboutPage } from "./about/index.tsx";
 
 export const PageRouter = () => {
   return (
@@ -13,6 +14,7 @@ export const PageRouter = () => {
         <Route index element={<Home />} />
         <Route path="venues/:id" element={<Venue />} />
         <Route path="venues/confirmation" element={<BookingConfirmed />} />
+        <Route path="about" element={<AboutPage />} />
         <Route path="profile/*" element={<ProfileRouter />} />
         <Route path="*" element={<ErrorPage />} />
       </Route>
