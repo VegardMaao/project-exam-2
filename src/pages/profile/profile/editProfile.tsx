@@ -1,5 +1,5 @@
 import { Metadata } from "../../../components/metadata/metadata";
-import { EditProfileForm } from "../../../components/forms/EditProfileForm";
+import { EditProfileForm } from "../../../components/forms/editProfileForm";
 import { Link } from "react-router-dom";
 
 export function EditProfile() {
