@@ -20,6 +20,8 @@ const schema = yup
 
 export function EditProfileForm(params: any) {
   const navigate = useNavigate();
+  console.log(params);
+
   console.log(navigate);
 
   const { register } = useForm({
