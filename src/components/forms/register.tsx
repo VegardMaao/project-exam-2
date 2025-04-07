@@ -10,6 +10,7 @@ import { buttons, LoginRegister as S } from "../../styles";
 import { emailRegex } from "../regex";
 import { registerUser } from "../../api/post/registerUser";
 import { RegisterUserData } from "../interfaces/loginAndRegisterInterface";
+import { useNavigate } from "react-router-dom";
 
 const userErrorMsg = "name must be at least 3 letters, max 15";
 const emailErrorMsg = "A valid Noroff email is required";
@@ -34,6 +35,7 @@ const schema = yup
 
 export function RegisterUserForm(params: any) {
   const { setTitle, setDescription } = params;
+  const navigate = useNavigate();
 
   const {
     register,
@@ -55,6 +57,7 @@ export function RegisterUserForm(params: any) {
     formData.name = formData.name.trim();
     try {
       await registerUser(formData);
+      navigate("/profile/login");
     } catch (error: any) {
       console.dir(error);
       if (error instanceof Error) {
