@@ -33,4 +33,12 @@ export const TextArea = styled.textarea`
   padding: 0.7rem;
 `;
 
-export const ErrorMsg = styled.p``;
+export const ErrorMsg = styled.p`
+  display: ${({ display }) => display};
+  background: ${theme.color.orange};
+  font-size: 0.9rem;
+  font-weight: 400;
+  padding: 0.4rem;
+  border-radius: 10px;
+  margin-top: 0px;
+`;

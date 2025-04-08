@@ -7,6 +7,6 @@ export const EditProfileLabel = styled(generic.FormLabel)``;
 
 export const EditProfileInput = styled(generic.FormInput)``;
 
-export const EditProfileError = styled(generic.ErrorMsg)``;
+export const ErrorMsg = styled(generic.ErrorMsg)``;
 
 export const EditProfileTextArea = styled(generic.TextArea)``;
