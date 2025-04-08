@@ -10,15 +10,21 @@ import useLoggedInStore from "../../zustandStores/loggedInStore";
 import { editProfile } from "../../api/put/editProfile";
 import { EditForm } from "../interfaces/EditFormInterface";
 
+const defaultAvatar =
+  "https://images.unsplash.com/photo-1579547945413-497e1b99dac0?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&q=80&h=400&w=400";
+
+const defaultBanner =
+  "https://images.unsplash.com/photo-1579547945413-497e1b99dac0?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&q=80&h=500&w=1500";
+
 const schema = yup
   .object({
     bio: yup.string().optional(),
     avatar: yup.object().shape({
-      url: yup.string().url().optional(),
+      url: yup.string().url().optional().default(defaultAvatar),
       alt: yup.string().optional(),
     }),
     banner: yup.object().shape({
-      url: yup.string().url().optional(),
+      url: yup.string().url().optional().default(defaultBanner),
       alt: yup.string().optional(),
     }),
     venueManager: yup.bool().required(),
