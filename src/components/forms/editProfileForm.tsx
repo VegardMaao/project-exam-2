@@ -20,11 +20,11 @@ const schema = yup
   .object({
     bio: yup.string().optional(),
     avatar: yup.object().shape({
-      url: yup.string().url().optional().default(defaultAvatar),
+      url: yup.string().url().optional(),
       alt: yup.string().optional(),
     }),
     banner: yup.object().shape({
-      url: yup.string().url().optional().default(defaultBanner),
+      url: yup.string().url().optional(),
       alt: yup.string().optional(),
     }),
     venueManager: yup.bool().required(),
