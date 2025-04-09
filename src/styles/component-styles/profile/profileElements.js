@@ -94,8 +94,8 @@ export const VenuesAndBookingsList = styled.ul`
 `;
 
 export const VenuesAndBookingsImg = styled.img`
-  display: ${(display) => display.display};
   max-width: 70%;
+  max-height: 70%;
 `;
 
 export const VenuesAndBookingsLink = styled(Link)`

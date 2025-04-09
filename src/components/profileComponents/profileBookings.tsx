@@ -15,12 +15,7 @@ export function UserBookings() {
   const location = useLocation();
   const url = `${profilesUrl}/${name}/bookings?_venue=true&_customer=true`;
   const { data, isLoading, isError } = useGetAPI(url);
-  if (
-    location.pathname !== "/profile/" ||
-    location.pathname.includes(`${name}`)
-  ) {
-    return <></>;
-  }
+
   if (isLoading) {
     return <loadingStyles.Loader />;
   }
@@ -28,6 +23,14 @@ export function UserBookings() {
   if (isError) {
     return <div>Error loading data</div>;
   }
+
+  if (
+    !location.pathname.includes(`${name}`) &&
+    location.pathname !== "/profile/"
+  ) {
+    return <></>;
+  }
+
   return (
     <S.VenuesAndBookingsWrapper>
       <S.VenuesBookingHeader>Your bookings</S.VenuesBookingHeader>
