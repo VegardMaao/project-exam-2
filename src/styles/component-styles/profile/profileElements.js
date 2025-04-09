@@ -104,7 +104,7 @@ export const VenuesAndBookingsLink = styled(Link)`
   flex-direction: column;
   align-items: center;
   width: 30vw;
-  height: 225px;
+  height: 300px;
   margin: auto;
 
   @media (${device.sm}) {
