@@ -2,6 +2,7 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 // @ts-ignore
 import { Link } from "react-router-dom";
+//@ts-ignore
 import { singleVenueStyles as S } from "../../../styles/index.js";
 import { BookingForm } from "../../forms/bookVenueForm.tsx";
 import { SetAmenities } from "./minorComponents/setAmenities.tsx";
