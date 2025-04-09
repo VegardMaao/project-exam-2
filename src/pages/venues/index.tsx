@@ -9,7 +9,7 @@ export function Venue() {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const { id } = useParams();
-  const venueURL = `https://v2.api.noroff.dev/holidaze/venues/${id}`;
+  const venueURL = `https://v2.api.noroff.dev/holidaze/venues/${id}?_owner=true&_bookings=true`;
 
   return (
     <main>

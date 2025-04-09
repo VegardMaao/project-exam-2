@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 // @ts-ignore
+import { Link } from "react-router-dom";
 import { singleVenueStyles as S } from "../../../styles/index.js";
 import { BookingForm } from "../../forms/bookVenueForm.tsx";
 import { SetAmenities } from "./minorComponents/setAmenities.tsx";
@@ -20,7 +21,11 @@ export function DisplaySingleVenue(venueInfo: any) {
       rating,
       created,
       updated,
+      owner,
+      bookings,
     } = venueInfo.venueInfo || {};
+
+    console.log(bookings);
 
     return (
       <S.SingleVenueWrapper>
@@ -33,6 +38,7 @@ export function DisplaySingleVenue(venueInfo: any) {
           alt={media[0] ? media[0].alt : ""}
         />
         <S.SingleVenueHeading>{name}</S.SingleVenueHeading>
+        <Link to={`/profile/${owner.name}`}>By {owner.name}</Link>
         <S.SingleVenueParagraph>{description}</S.SingleVenueParagraph>
         <S.SingleVenueParagraph>{`Costs ${price} dollars per night, rated ${rating} of 5. There have been ${_count.bookings} bookings of this venue so far.`}</S.SingleVenueParagraph>
         <BookingForm guests={maxGuests} id={id} />
