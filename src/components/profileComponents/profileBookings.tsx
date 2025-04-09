@@ -55,7 +55,7 @@ export function UserBookings() {
                   .substring(0, 10)
                   .split("-")
                   .reverse()
-                  .join(".")}, to the ${booking.dateFrom
+                  .join(".")}, to the ${booking.dateTo
                   .substring(0, 10)
                   .split("-")
                   .reverse()
