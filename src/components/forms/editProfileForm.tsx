@@ -9,6 +9,7 @@ import { buttons, EditProfileStyles as S } from "../../styles";
 import useLoggedInStore from "../../zustandStores/loggedInStore";
 import { editProfile } from "../../api/put/editProfile";
 import { EditForm } from "../interfaces/EditFormInterface";
+import { useNavigate } from "react-router-dom";
 
 const defaultAvatar =
   "https://images.unsplash.com/photo-1579547945413-497e1b99dac0?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&q=80&h=400&w=400";
@@ -16,23 +17,25 @@ const defaultAvatar =
 const defaultBanner =
   "https://images.unsplash.com/photo-1579547945413-497e1b99dac0?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&q=80&h=500&w=1500";
 
+const defaultAltText = "A blurry multi-colored rainbow background";
+
 const schema = yup
   .object({
     bio: yup.string().optional(),
     avatar: yup.object().shape({
-      url: yup.string().url().optional(),
-      alt: yup.string().optional(),
+      url: yup.string().url().optional().default(defaultAvatar),
+      alt: yup.string().optional().default(defaultAltText),
     }),
     banner: yup.object().shape({
-      url: yup.string().url().optional(),
-      alt: yup.string().optional(),
+      url: yup.string().url().optional().default(defaultBanner),
+      alt: yup.string().optional().default(defaultAltText),
     }),
     venueManager: yup.bool().required(),
   })
   .required();
 
 export function EditProfileForm() {
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
   const { getName } = useLoggedInStore();
   const userName = getName();
   const userNameAsString = `${userName}`;
@@ -46,12 +49,29 @@ export function EditProfileForm() {
     mode: "onChange",
   });
 
+  function ifIsEmpty(data: EditForm) {
+    if (data.avatar.url === "") {
+      data.avatar.url = defaultAvatar;
+      data.avatar.alt = defaultAltText;
+    }
+    if (data.banner.url === "") {
+      data.banner.url = defaultBanner;
+      data.banner.alt = defaultAltText;
+    }
+    return;
+  }
+
   const onSubmit = async (e: Event) => {
     e.preventDefault();
     const formData = getValues();
+    ifIsEmpty(formData);
     try {
       editProfile(formData, userNameAsString);
-      // navigate("/profile");
+      console.log(formData);
+
+      setTimeout(() => {
+        navigate("/profile");
+      }, 1000);
     } catch (error: any) {
       console.dir(error);
       if (error instanceof Error) {

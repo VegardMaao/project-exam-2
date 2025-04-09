@@ -1,12 +1,12 @@
 export interface EditForm {
-    bio?: string | undefined
-    venueManager: boolean;
+    bio?: string | undefined;
     avatar: {
-        url?: string | undefined;
-        alt?: string | undefined;
+        url: string;
+        alt: string;
     };
     banner: {
-        url?: string | undefined;
-        alt?: string | undefined;
+        url: string;
+        alt: string;
     };
+    venueManager: NonNullable<boolean | undefined>;
 }
