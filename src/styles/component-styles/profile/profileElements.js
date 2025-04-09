@@ -94,7 +94,8 @@ export const VenuesAndBookingsList = styled.ul`
 `;
 
 export const VenuesAndBookingsImg = styled.img`
-  height: 50px;
+  display: ${(display) => display.display};
+  max-width: 70%;
 `;
 
 export const VenuesAndBookingsLink = styled(Link)`
@@ -102,8 +103,13 @@ export const VenuesAndBookingsLink = styled(Link)`
   display: flex;
   flex-direction: column;
   align-items: center;
-  max-width: 40vw;
+  width: 30vw;
+  height: 225px;
   margin: auto;
+
+  @media (${device.sm}) {
+    width: 70vw;
+  }
 `;
 
 export const VenueAndBookingName = styled.h3`

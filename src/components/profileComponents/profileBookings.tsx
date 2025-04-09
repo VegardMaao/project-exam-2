@@ -36,8 +36,12 @@ export function UserBookings() {
           <li key={booking.id}>
             <S.VenuesAndBookingsLink to={`/venues/${booking.venue.id}`}>
               <S.VenuesAndBookingsImg
-                src={booking.venue.media[0].url}
-                alt={booking.venue.media[0].alt}
+                src={
+                  booking.venue.media.length ? booking.venue.media[0].url : ""
+                }
+                alt={
+                  booking.venue.media.length ? booking.venue.media[0].alt : ""
+                }
               />
               <S.VenueAndBookingName>
                 {booking.venue.name}

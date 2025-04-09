@@ -3,7 +3,6 @@
 import { loadingStyles, ProfileElem as S } from "../../styles";
 import { useGetAPI } from "../../api";
 import { Venue } from "../interfaces/venues";
-import { Link } from "react-router-dom";
 
 interface VenueManagerInterFace {
   managerBool: boolean;
@@ -22,15 +21,22 @@ export function VenueManager(params: VenueManagerInterFace) {
     if (isError) {
       return <div>Error loading data</div>;
     }
+    console.log(data);
+
     return (
       <S.VenuesAndBookingsWrapper>
         <S.VenuesBookingHeader>User manages these venues</S.VenuesBookingHeader>
         <S.VenuesAndBookingsList>
           {data.map((venue: Venue) => (
             <li key={venue.id}>
-              <Link to={`/venues/${venue.id}`}>
+              <S.VenuesAndBookingsLink to={`/venues/${venue.id}`}>
+                <S.VenuesAndBookingsImg
+                  display={venue.media.length ? "block" : "none"}
+                  src={venue.media.length ? venue.media[0].url : ""}
+                  alt={venue.media.length ? venue.media[0].alt : ""}
+                />
                 <S.VenueAndBookingName>{venue.name}</S.VenueAndBookingName>
-              </Link>
+              </S.VenuesAndBookingsLink>
             </li>
           ))}
         </S.VenuesAndBookingsList>
