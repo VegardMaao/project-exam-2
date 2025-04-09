@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { device } from "../../BreakPoints";
 import { theme } from "../../theme";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 export const ProfileWrapper = styled.div`
   display: flex;
@@ -58,22 +58,59 @@ export const EditProfileLink = styled(NavLink)`
   display: ${(display) => display.display};
 `;
 
-export const VenueManagerWrapper = styled.div`
+export const FlexBox = styled.div`
+  width: 100vw;
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-`;
+  justify-content: space-evenly;
 
-export const VenuesList = styled.ul`
-  margin: 0px;
-  padding: 10px 0px;
-
-  li {
-    list-style: none;
+  @media (${device.sm}) {
+    display: flex;
+    flex-direction: column;
   }
 `;
 
-export const VenueName = styled.h3`
+export const VenuesAndBookingsWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
+
+export const VenuesBookingHeader = styled.h2`
+  text-decoration: underline;
+`;
+
+export const VenuesAndBookingsList = styled.ul`
+  margin: 0px;
+  padding: 10px 0px;
+  margin: auto;
+
+  li {
+    list-style: none;
+    border: 2px solid black;
+    margin: 10px auto;
+    padding: 10px;
+    border-radius: 15px;
+  }
+`;
+
+export const VenuesAndBookingsImg = styled.img`
+  height: 50px;
+`;
+
+export const VenuesAndBookingsLink = styled(Link)`
+  color: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 40vw;
+  margin: auto;
+`;
+
+export const VenueAndBookingName = styled.h3`
   text-decoration: none;
   text-align: start;
+  word-wrap: break-word;
+  max-width: 100%;
 `;
+
+export const VenueAndBookingDetails = styled.p``;

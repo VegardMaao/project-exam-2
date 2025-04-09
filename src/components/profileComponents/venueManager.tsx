@@ -23,24 +23,24 @@ export function VenueManager(params: VenueManagerInterFace) {
       return <div>Error loading data</div>;
     }
     return (
-      <S.VenueManagerWrapper>
-        <h2>User manages these venues</h2>
-        <S.VenuesList>
+      <S.VenuesAndBookingsWrapper>
+        <S.VenuesBookingHeader>User manages these venues</S.VenuesBookingHeader>
+        <S.VenuesAndBookingsList>
           {data.map((venue: Venue) => (
             <li key={venue.id}>
               <Link to={`/venues/${venue.id}`}>
-                <S.VenueName>{venue.name}</S.VenueName>
+                <S.VenueAndBookingName>{venue.name}</S.VenueAndBookingName>
               </Link>
             </li>
           ))}
-        </S.VenuesList>
-      </S.VenueManagerWrapper>
+        </S.VenuesAndBookingsList>
+      </S.VenuesAndBookingsWrapper>
     );
   } else {
     return (
-      <S.VenueManagerWrapper>
-        <h2>User does not host venues</h2>
-      </S.VenueManagerWrapper>
+      <S.VenuesAndBookingsWrapper>
+        <S.VenuesBookingHeader>User does not host venues</S.VenuesBookingHeader>
+      </S.VenuesAndBookingsWrapper>
     );
   }
 }

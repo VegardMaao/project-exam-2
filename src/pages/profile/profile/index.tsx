@@ -3,6 +3,8 @@ import {
   BannerComp,
   AvatarComp,
   ProfileSummary,
+  UserBookings,
+  VenueManager,
 } from "../../../components/profileComponents/index.ts";
 import { useGetAPI } from "../../../api";
 import { useParams } from "react-router-dom";
@@ -10,7 +12,6 @@ import { profilesUrl } from "../../../environment";
 import useLoggedInStore from "../../../zustandStores/loggedInStore.ts";
 //@ts-ignore
 import { loadingStyles, buttons, ProfileElem as S } from "../../../styles";
-import { VenueManager } from "../../../components/profileComponents/venueManager.tsx";
 
 export function Profile() {
   const { getName } = useLoggedInStore();
@@ -68,7 +69,13 @@ export function Profile() {
           >
             <buttons.ButtonComponent>Edit your profile</buttons.ButtonComponent>
           </S.EditProfileLink>
-          <VenueManager managerBool={venueManager} url={venuesUrl} />
+          <S.FlexBox>
+            <UserBookings.UserBookings />
+            <VenueManager.VenueManager
+              managerBool={venueManager}
+              url={venuesUrl}
+            />
+          </S.FlexBox>
         </S.ProfileWrapper>
       </main>
     );
