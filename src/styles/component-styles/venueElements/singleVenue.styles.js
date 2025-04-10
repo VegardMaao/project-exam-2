@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { theme } from "../../theme.ts";
+import { device } from "../../BreakPoints";
 
 export const SingleVenueWrapper = styled.div`
   margin-bottom: 20px;
@@ -34,11 +34,20 @@ export const SingleVenueParagraph = styled.p`
 `;
 
 export const BookingWrapper = styled.div`
-  display: flex;
+  display: grid;
   width: 75vw;
   height: 65vh;
-  flex-direction: row;
+  grid-template-columns: 1fr 1fr;
   justify-content: space-evenly;
+  justify-items: center;
+  align-items: start;
+
+  @media (${device.sm}) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+  }
 `;
 
 export const MoreInfoDiv = styled.div`
@@ -53,6 +62,11 @@ export const CurrentBookingsWrapper = styled.div`
   flex-direction: column;
   align-items: center;
   margin: 5vh;
+  height: 40%;
+
+  @media (${device.sm}) {
+    height: 30vh;
+  }
 `;
 
 export const CurrentBookingsList = styled.ul`
