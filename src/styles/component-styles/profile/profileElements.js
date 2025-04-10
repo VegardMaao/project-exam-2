@@ -8,6 +8,7 @@ export const ProfileWrapper = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  z-index: -1000;
 `;
 
 export const BannerImg = styled.div`
@@ -18,6 +19,7 @@ export const BannerImg = styled.div`
   height: 30vh;
   width: 100vw;
   margin: auto;
+  z-index: -1000;
 `;
 
 export const AvatarAndSummaryWrapper = styled.div`
@@ -36,6 +38,7 @@ export const AvatarAndSummaryWrapper = styled.div`
 export const AvatarImg = styled.img`
   border: 2px solid ${theme.color.black};
   max-height: 200px;
+  z-index: -100;
 `;
 
 export const ProfileSummaryWrapper = styled.div`
@@ -61,11 +64,12 @@ export const EditProfileLink = styled(NavLink)`
 export const FlexBox = styled.div`
   width: 100vw;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-around;
 
   @media (${device.sm}) {
     display: flex;
     flex-direction: column;
+    align-items: center;
   }
 `;
 
@@ -73,6 +77,11 @@ export const VenuesAndBookingsWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 35vw;
+
+  @media (${device.sm}) {
+    width: 100%;
+  }
 `;
 
 export const VenuesBookingHeader = styled.h2`
