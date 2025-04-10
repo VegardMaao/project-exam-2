@@ -50,14 +50,13 @@ export function LoginUserForm(params: any) {
     const formData = getValues();
     try {
       await loginUser(formData);
-      setTimeout(() => {
-        logIn();
-      }, 500);
     } catch (error: any) {
       console.dir(error);
       if (error instanceof Error) {
         return alert(error.message);
       }
+    } finally {
+      logIn();
     }
   };
 

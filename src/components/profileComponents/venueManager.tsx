@@ -33,6 +33,10 @@ export function VenueManager(params: VenueManagerInterFace) {
       return <loadingStyles.Loader />;
     }
 
+    const stringBool = managerBool.toString();
+
+    localStorage.setItem("venueManager", stringBool);
+
     if (isError) {
       return <div>Error loading data</div>;
     }

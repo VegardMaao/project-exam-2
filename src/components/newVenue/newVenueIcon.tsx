@@ -1,13 +1,12 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 //@ts-ignore
 import { newVenueButton as S } from "../../styles";
-import useLoggedInStore from "../../zustandStores/loggedInStore";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { NewVenuePopUp } from "../forms/newVenuePopupForm";
 
 export function NewVenueIcon() {
-  const { loggedIn } = useLoggedInStore();
   const [showForm, setShowForm] = useState("none");
+  const [showButton, setShowButton] = useState<string | null>();
   const [rotate, setRotate] = useState("0");
 
   function onClick() {
@@ -15,7 +14,12 @@ export function NewVenueIcon() {
     setRotate(rotate === "45" ? "0" : "45");
   }
 
-  if (loggedIn) {
+  const manager = localStorage.getItem("venueManager");
+  useEffect(() => {
+    setShowButton(manager);
+  }, []);
+
+  if (showButton === "true") {
     return (
       <>
         <NewVenuePopUp display={`${showForm}`} />
