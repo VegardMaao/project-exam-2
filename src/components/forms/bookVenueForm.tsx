@@ -69,6 +69,7 @@ export function BookingForm(params: params) {
   if (loggedIn) {
     return (
       <S.Form onSubmit={onSubmit} onChange={onChange}>
+        <h2>Book your stay</h2>
         <S.FormLabel htmlFor="dateFrom">Date of arrival</S.FormLabel>
         <S.FormInput type="date" min={today} {...register("dateFrom")} />
         <S.ErrorMsg display={errors.dateFrom?.message ? "inline" : "none"}>

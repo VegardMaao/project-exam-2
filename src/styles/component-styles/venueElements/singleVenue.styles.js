@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { theme } from "../../theme.ts";
 
 export const SingleVenueWrapper = styled.div`
   margin-bottom: 20px;
@@ -32,11 +33,38 @@ export const SingleVenueParagraph = styled.p`
   margin: 15px auto;
 `;
 
+export const BookingWrapper = styled.div`
+  display: flex;
+  width: 75vw;
+  height: 65vh;
+  flex-direction: row;
+  justify-content: space-evenly;
+`;
+
 export const MoreInfoDiv = styled.div`
   display: flex;
   width: 75vw;
   flex-direction: row;
   justify-content: space-evenly;
+`;
+
+export const CurrentBookingsWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 5vh;
+`;
+
+export const CurrentBookingsList = styled.ul`
+  padding: 10px;
+  overflow-y: scroll;
+  max-height: 100%;
+
+  li {
+    list-style: none;
+    text-decoration: underline;
+    padding: 10px;
+  }
 `;
 
 export const AmenitiesDiv = styled.div`

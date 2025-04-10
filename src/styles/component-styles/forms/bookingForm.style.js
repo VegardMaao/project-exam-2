@@ -6,8 +6,7 @@ export const Form = styled.form`
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-around;
-  margin: 10vh auto;
+  margin: 5vh;
 `;
 
 export const FormLabel = styled.label`

@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import { singleVenueStyles as S } from "../../../styles/index.js";
 import { BookingForm } from "../../forms/bookVenueForm.tsx";
 import { SetAmenities } from "./minorComponents/setAmenities.tsx";
+import { VenueAvailability } from "./minorComponents/venueAvailability.tsx";
 
 export function DisplaySingleVenue(venueInfo: any) {
   if (venueInfo.venueInfo.name) {
@@ -26,8 +27,6 @@ export function DisplaySingleVenue(venueInfo: any) {
       bookings,
     } = venueInfo.venueInfo || {};
 
-    console.log(bookings);
-
     return (
       <S.SingleVenueWrapper>
         <S.SingleVenueImage
@@ -42,7 +41,10 @@ export function DisplaySingleVenue(venueInfo: any) {
         <Link to={`/profile/${owner.name}`}>By {owner.name}</Link>
         <S.SingleVenueParagraph>{description}</S.SingleVenueParagraph>
         <S.SingleVenueParagraph>{`Costs ${price} dollars per night, rated ${rating} of 5. There have been ${_count.bookings} bookings of this venue so far.`}</S.SingleVenueParagraph>
-        <BookingForm guests={maxGuests} id={id} />
+        <S.BookingWrapper>
+          <VenueAvailability bookings={bookings} />
+          <BookingForm guests={maxGuests} id={id} />
+        </S.BookingWrapper>
         <div>
           <S.SingleVenueH2>More about this Venue:</S.SingleVenueH2>
           <S.MoreInfoDiv>
