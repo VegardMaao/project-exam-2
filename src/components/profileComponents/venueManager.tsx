@@ -36,7 +36,7 @@ export function VenueManager(params: VenueManagerInterFace) {
     if (isError) {
       return <div>Error loading data</div>;
     }
-    console.log(data);
+
     return (
       <S.VenuesAndBookingsWrapper>
         <S.VenuesBookingHeader>

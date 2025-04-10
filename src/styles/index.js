@@ -11,3 +11,5 @@ export * as ProfileElem from "./component-styles/profile/profileElements.js";
 export * as BookingFormStyles from "./component-styles/forms/bookingForm.style.js";
 export * as GenericStyles from "./GenericComponents.styles.js";
 export * as EditProfileStyles from "./component-styles/forms/editProfileForm.style.js";
+export * as newVenueButton from "./component-styles/buttonsAndCTAs/newVenueCTA.js";
+export * as newVenueFormStyles from "./component-styles/forms/newVenueForm.style.js";

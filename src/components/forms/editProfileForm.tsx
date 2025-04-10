@@ -3,7 +3,6 @@
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import { Controller, useForm } from "react-hook-form";
-// import { useNavigate } from "react-router-dom";
 //@ts-ignore
 import { buttons, EditProfileStyles as S } from "../../styles";
 import useLoggedInStore from "../../zustandStores/loggedInStore";
@@ -67,8 +66,6 @@ export function EditProfileForm() {
     ifIsEmpty(formData);
     try {
       editProfile(formData, userNameAsString);
-      console.log(formData);
-
       setTimeout(() => {
         navigate("/profile");
       }, 1000);

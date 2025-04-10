@@ -27,8 +27,6 @@ type Booking = {
 
 export function VenueAvailability(params: any) {
   const { bookings } = params;
-  console.log(bookings);
-
   return (
     <S.CurrentBookingsWrapper>
       <h2>Currently Booked:</h2>
