@@ -10,15 +10,24 @@ export const NewVenueForm = styled(generic.Form)`
   padding: 15px;
   background: ${theme.color.offwhite};
   width: 75vw;
-  height: 75vh;
+  height: 70vh;
   margin: auto;
   border: 2px solid ${theme.color.black};
   border-radius: 15px;
   position: sticky;
   bottom: 10vh;
+  overflow-y: scroll;
+
+  -ms-overflow-style: none; 
+  scrollbar-width: none; 
+
+  &::-webkit-scrollbar { 
+    display: none;
 `;
 
-export const NewVenueLabel = styled(generic.FormLabel)``;
+export const NewVenueLabel = styled(generic.FormLabel)`
+  font-size: 1 rem;
+`;
 
 export const NewVenueInput = styled(generic.FormInput)``;
 

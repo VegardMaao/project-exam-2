@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { theme } from "../../theme";
+import { device } from "../../BreakPoints";
 import { ButtonComponent } from "./buttons.styles";
 
 export const NewVenueBtn = styled(ButtonComponent)`
@@ -14,5 +14,10 @@ export const NewVenueBtn = styled(ButtonComponent)`
     font-size: 1.5rem;
     transition: all 200ms ease-in-out;
     transform: rotate(${(rotation) => rotation.rotation}deg);
+  }
+
+  @media (${device.sm}) {
+    bottom: 2vh;
+    left: 85vw;
   }
 `;

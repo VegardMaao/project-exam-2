@@ -153,6 +153,24 @@ export function NewVenuePopUp(display: { display: string }) {
           </>
         )}
       />
+      {/* <Controller
+        name="price"
+        control={control}
+        render={() => (
+          <>
+            <S.NewVenueLabel>Price per night</S.NewVenueLabel>
+            <S.NewVenueInput
+              type="number"
+              min="1"
+              {...register("price", { valueAsNumber: true })}
+            />
+            <S.ErrorMsg display={errors.price?.message ? "inline" : "none"}>
+              {errors.price?.message}
+            </S.ErrorMsg>
+          </>
+        )}
+      /> */}
+
       <Controller
         name="price"
         control={control}
@@ -161,6 +179,8 @@ export function NewVenuePopUp(display: { display: string }) {
             <S.NewVenueLabel>Price per night</S.NewVenueLabel>
             <S.NewVenueInput
               type="number"
+              min="1"
+              max="100"
               {...register("price", { valueAsNumber: true })}
             />
             <S.ErrorMsg display={errors.price?.message ? "inline" : "none"}>
