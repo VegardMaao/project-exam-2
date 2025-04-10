@@ -49,14 +49,14 @@ export function NewVenuePopUp(display: { display: string }) {
     mode: "onChange",
   });
 
-  function cleanData(data: creationType) {
-    data.media = [data.media];
-  }
+  // function cleanData(data: creationType) {
+  //   data.media = [data.media];
+  // }
 
   const onSubmit = async (e: Event) => {
     e.preventDefault();
     const formData = getValues();
-    cleanData(formData);
+    // cleanData(formData);
     try {
       // createVenue(formData);
       console.log(formData);
@@ -98,7 +98,7 @@ export function NewVenuePopUp(display: { display: string }) {
           </>
         )}
       />
-      <Controller
+      {/* <Controller
         name="media.url"
         control={control}
         render={() => (
@@ -119,6 +119,30 @@ export function NewVenuePopUp(display: { display: string }) {
         control={control}
         render={() => (
           <>
+            <S.NewVenueLabel>Image description</S.NewVenueLabel>
+            <S.NewVenueInput {...register("media.alt")} />
+            <S.ErrorMsg
+              display={errors.media?.alt?.message ? "inline" : "none"}
+            >
+              {errors.media?.alt?.message}
+            </S.ErrorMsg>
+          </>
+        )}
+      /> */}
+
+      <Controller
+        name="media"
+        control={control}
+        render={() => (
+          <>
+            <S.NewVenueLabel>Image URL</S.NewVenueLabel>
+            <S.NewVenueInput {...register("media.url")} />
+            <S.ErrorMsg
+              display={errors.media?.url?.message ? "inline" : "none"}
+            >
+              {errors.media?.url?.message}
+            </S.ErrorMsg>
+
             <S.NewVenueLabel>Image description</S.NewVenueLabel>
             <S.NewVenueInput {...register("media.alt")} />
             <S.ErrorMsg
