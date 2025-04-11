@@ -8,7 +8,7 @@ import {  singleVenueStyles as S,carouselStyles as C,} from "../../../styles/ind
 import "pure-react-carousel/dist/react-carousel.es.css";
 
 function Carousel(params: any) {
-  const [number, setNumber] = useState(1);
+  const [number, setNumber] = useState(0);
   const { media } = params;
 
   function add() {
@@ -20,8 +20,6 @@ function Carousel(params: any) {
   }
 
   const length = media.length;
-  console.log(length);
-
   return (
     <C.StyledCarouselProvider
       naturalSlideWidth={100}

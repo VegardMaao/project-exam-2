@@ -37,7 +37,11 @@ const schema = yup
 
 type creationType = yup.InferType<typeof schema>;
 
-export function NewVenuePopUp(display: { display: string }) {
+export function NewVenuePopUp(props: {
+  display: boolean;
+  handleOnSubmit: (newId: string) => void;
+}) {
+  const { display, handleOnSubmit } = props;
   const {
     register,
     control,
@@ -58,7 +62,8 @@ export function NewVenuePopUp(display: { display: string }) {
     e.preventDefault();
     const formData = getValues();
     try {
-      createVenue(formData);
+      const newVenueID = await createVenue(formData);
+      handleOnSubmit(newVenueID);
     } catch (error: any) {
       console.dir(error);
       if (error instanceof Error) {
@@ -68,7 +73,7 @@ export function NewVenuePopUp(display: { display: string }) {
   };
 
   return (
-    <S.NewVenueForm display={display} onSubmit={onSubmit}>
+    <S.NewVenueForm display={display ? "flex" : "none"} onSubmit={onSubmit}>
       <Controller
         name="name"
         control={control}

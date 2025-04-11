@@ -3,7 +3,7 @@ import * as generic from "./genericFrom.style.js";
 import { theme } from "../../theme.ts";
 
 export const NewVenueForm = styled(generic.Form)`
-  ${(display) => display.display};
+  ${(display) => display};
   flex-direction: column;
   align-content: center;
   align-items: center;

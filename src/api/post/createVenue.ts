@@ -4,7 +4,6 @@ import { VenueCreator } from "../../components/interfaces/createVenueInterface";
 
 export const createVenue = async (formInfo: VenueCreator) => {
     const venueUrl = `${holidazeUrl}/venues`;
-    console.log(formInfo, venueUrl);
-
-    await postData(venueUrl, formInfo);
+    const { data } = await postData(venueUrl, formInfo);
+    return data.id;
 };
