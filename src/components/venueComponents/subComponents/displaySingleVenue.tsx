@@ -7,8 +7,19 @@ import { singleVenueStyles as S } from "../../../styles/index.js";
 import { BookingForm } from "../../forms/bookVenueForm.tsx";
 import { SetAmenities } from "./minorComponents/setAmenities.tsx";
 import { VenueAvailability } from "./minorComponents/venueAvailability.tsx";
+import useLoggedInStore from "../../../zustandStores/loggedInStore.ts";
+
+function checkUser(name1: string, name2: string) {
+  if (name1 === name2) {
+    return true;
+  } else {
+    return false;
+  }
+}
 
 export function DisplaySingleVenue(venueInfo: any) {
+  const { getName } = useLoggedInStore();
+  const myUserName = getName();
   if (venueInfo.venueInfo.name) {
     const {
       description,
@@ -27,6 +38,8 @@ export function DisplaySingleVenue(venueInfo: any) {
       bookings,
     } = venueInfo.venueInfo || {};
 
+    const checker = checkUser(`${myUserName}`, `${owner.name}`);
+
     return (
       <S.SingleVenueWrapper>
         <S.SingleVenueImage
@@ -38,7 +51,9 @@ export function DisplaySingleVenue(venueInfo: any) {
           alt={media[0] ? media[0].alt : ""}
         />
         <S.SingleVenueHeading>{name}</S.SingleVenueHeading>
-        <Link to={`/profile/${owner.name}`}>By {owner.name}</Link>
+        <Link to={`/profile/${owner.name}`}>
+          {checker ? "You are hosting this venue" : `By ${owner.name}`}
+        </Link>
         <S.SingleVenueParagraph>{description}</S.SingleVenueParagraph>
         <S.SingleVenueParagraph>{`Costs ${price} dollars per night, rated ${rating} of 5. There have been ${_count.bookings} bookings of this venue so far.`}</S.SingleVenueParagraph>
         <S.BookingWrapper>
