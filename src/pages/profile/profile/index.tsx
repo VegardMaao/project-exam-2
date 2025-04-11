@@ -49,7 +49,7 @@ export function Profile() {
     return <div>Error loading data</div>;
   }
 
-  if (data.name) {
+  if (data?.name) {
     const { banner, avatar, name, email, bio, venueManager } = data;
     const venuesUrl = `${url}/venues`;
 

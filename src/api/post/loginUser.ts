@@ -4,5 +4,6 @@ import { LoginUserData } from "../../components/interfaces/loginAndRegisterInter
 
 export const loginUser = async (userData: LoginUserData) => {
   const loginUrl = `${authUrl}/login`;
-  await postData(loginUrl, userData);
+  const { data } = await postData(loginUrl, userData);
+  return data;
 };

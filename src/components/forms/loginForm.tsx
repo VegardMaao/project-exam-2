@@ -11,6 +11,7 @@ import { emailRegex } from "../regex";
 import { loginUser } from "../../api/post/loginUser";
 import { LoginUserData } from "../interfaces/loginAndRegisterInterface";
 import useLoggedInStore from "../../zustandStores/loggedInStore";
+import { useNavigate } from "react-router-dom";
 
 const emailErrorMsg = "A valid Noroff email is required";
 const passwordErrorMsg = "Password is required";
@@ -28,6 +29,7 @@ const schema = yup
   .required();
 
 export function LoginUserForm(params: any) {
+  const navigate = useNavigate();
   const { setTitle, setDescription } = params;
   const { logIn } = useLoggedInStore();
 
@@ -49,8 +51,10 @@ export function LoginUserForm(params: any) {
     e.preventDefault();
     const formData = getValues();
     try {
-      await loginUser(formData);
+      const { data } = await loginUser(formData);
+      console.log(data);
       logIn();
+      navigate(0);
     } catch (error: any) {
       console.dir(error);
       if (error instanceof Error) {

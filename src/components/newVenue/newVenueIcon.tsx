@@ -18,9 +18,8 @@ export function NewVenueIcon() {
 
   function onSubmit(newVenueID: string) {
     setShowForm(!showForm);
-    const url = `/venues/${newVenueID}`;
-    console.log(url);
-    navigate(url);
+    const goTo = `/venues/${newVenueID}`;
+    navigate(goTo);
   }
 
   const manager = localStorage.getItem("venueManager");
