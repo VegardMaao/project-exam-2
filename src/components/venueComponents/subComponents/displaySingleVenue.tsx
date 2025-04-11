@@ -94,7 +94,7 @@ export function DisplaySingleVenue(venueInfo: any) {
               </S.AmenitiesItem>
               <S.AmenitiesItem>{`${
                 location
-                  ? `Located in ${location.country}`
+                  ? `Located in ${location.address}`
                   : `Unspecified location`
               }`}</S.AmenitiesItem>
               <S.AmenitiesItem>{`Max ${maxGuests} guests`}</S.AmenitiesItem>
