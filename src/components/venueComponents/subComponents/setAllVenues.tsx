@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { VenuesArr } from "../../interfaces/venues.js";
 //@ts-ignore
 import { buttons, allVenuesStyles as S } from "../../../styles";
+import { SearchBar } from "../searchBar.js";
 
 export function SetAllVenues({ data }: { data: VenuesArr }) {
   const [allVenues, setAllVenues] = useState<VenuesArr | undefined>(undefined);
@@ -15,6 +16,7 @@ export function SetAllVenues({ data }: { data: VenuesArr }) {
   if (allVenues) {
     return (
       <S.VenuesWrapper>
+        <SearchBar originalArr={data} setAllVenues={setAllVenues} />
         <S.AllVenuesDiv>
           {allVenues.map((item) => (
             <S.VenueItem key={item.id}>
