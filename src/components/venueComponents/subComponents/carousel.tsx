@@ -1,11 +1,10 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 /* eslint-disable @typescript-eslint/no-explicit-any */
-//@ts-ignore
+
 import { useState } from "react";
-import {
-  singleVenueStyles as S,
-  carouselStyles as C,
-} from "../../../styles/index.js";
+// prettier-ignore
+//@ts-ignore
+import {  singleVenueStyles as S,carouselStyles as C,} from "../../../styles/index.js";
 import "pure-react-carousel/dist/react-carousel.es.css";
 
 function Carousel(params: any) {
