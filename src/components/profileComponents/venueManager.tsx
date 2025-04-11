@@ -19,7 +19,7 @@ export function VenueManager(params: VenueManagerInterFace) {
   const location = useLocation();
   const myUserBool = () => {
     if (
-      location.pathname === "/profile/" ||
+      location.pathname === "/profile" ||
       location.pathname.includes(`${name}`)
     ) {
       return true;
