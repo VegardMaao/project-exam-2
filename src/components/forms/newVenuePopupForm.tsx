@@ -5,19 +5,19 @@ import { newVenueFormStyles as S, buttons as B } from "../../styles";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import { Controller, useForm } from "react-hook-form";
-// import { createVenue } from "../../api/post/createVenue";
+import { createVenue } from "../../api/post/createVenue";
 // import { VenueCreator } from "../interfaces/createVenueInterface";
 
 const schema = yup
   .object({
     name: yup.string().required(),
     description: yup.string().required(),
-    media: yup
-      .object({
-        url: yup.string().required(),
-        alt: yup.string().required(),
-      })
-      .optional(),
+    // media: yup
+    //   .object({
+    //     url: yup.string().required(),
+    //     alt: yup.string().required(),
+    //   })
+    //   .optional(),
     price: yup.number().required(),
     maxGuests: yup.number().min(1, "Minimum 1").max(100, "Max 100").required(),
     rating: yup.number().max(5, "no more than 5").optional(),
@@ -49,16 +49,11 @@ export function NewVenuePopUp(display: { display: string }) {
     mode: "onChange",
   });
 
-  // function cleanData(data: creationType) {
-  //   data.media = [data.media];
-  // }
-
   const onSubmit = async (e: Event) => {
     e.preventDefault();
     const formData = getValues();
-    // cleanData(formData);
     try {
-      // createVenue(formData);
+      createVenue(formData);
       console.log(formData);
     } catch (error: any) {
       console.dir(error);
@@ -129,7 +124,7 @@ export function NewVenuePopUp(display: { display: string }) {
           </>
         )}
       /> */}
-
+      {/* 
       <Controller
         name="media"
         control={control}
@@ -149,23 +144,6 @@ export function NewVenuePopUp(display: { display: string }) {
               display={errors.media?.alt?.message ? "inline" : "none"}
             >
               {errors.media?.alt?.message}
-            </S.ErrorMsg>
-          </>
-        )}
-      />
-      {/* <Controller
-        name="price"
-        control={control}
-        render={() => (
-          <>
-            <S.NewVenueLabel>Price per night</S.NewVenueLabel>
-            <S.NewVenueInput
-              type="number"
-              min="1"
-              {...register("price", { valueAsNumber: true })}
-            />
-            <S.ErrorMsg display={errors.price?.message ? "inline" : "none"}>
-              {errors.price?.message}
             </S.ErrorMsg>
           </>
         )}

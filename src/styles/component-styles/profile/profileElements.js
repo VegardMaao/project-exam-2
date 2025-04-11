@@ -91,7 +91,9 @@ export const VenuesBookingHeader = styled.h2`
 export const VenuesAndBookingsList = styled.ul`
   margin: 0px;
   padding: 10px 0px;
-  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
 
   li {
     list-style: none;

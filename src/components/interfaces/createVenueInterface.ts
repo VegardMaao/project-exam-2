@@ -4,7 +4,7 @@ export interface MediaInterface {
 }
 
 export interface VenueCreator {
-    media?: MediaInterface[],
+    // media?: MediaInterface[],
     rating?: number | undefined;
     name: string;
     description: string;
