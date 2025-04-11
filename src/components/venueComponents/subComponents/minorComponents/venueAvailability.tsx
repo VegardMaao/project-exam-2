@@ -27,24 +27,32 @@ type Booking = {
 
 export function VenueAvailability(params: any) {
   const { bookings } = params;
-  return (
-    <S.CurrentBookingsWrapper>
-      <h2>Currently Booked:</h2>
-      <S.CurrentBookingsList>
-        {bookings.map((booking: Booking) => (
-          <li key={booking.id}>
-            {`From the ${booking.dateFrom
-              .substring(0, 10)
-              .split("-")
-              .reverse()
-              .join(".")} to the ${booking.dateTo
-              .substring(0, 10)
-              .split("-")
-              .reverse()
-              .join(".")}`}
-          </li>
-        ))}
-      </S.CurrentBookingsList>
-    </S.CurrentBookingsWrapper>
-  );
+  if (!bookings.length) {
+    return (
+      <S.CurrentBookingsWrapper>
+        <h2>No current bookings</h2>
+      </S.CurrentBookingsWrapper>
+    );
+  } else {
+    return (
+      <S.CurrentBookingsWrapper>
+        <h2>Currently Booked:</h2>
+        <S.CurrentBookingsList>
+          {bookings.map((booking: Booking) => (
+            <li key={booking.id}>
+              {`From the ${booking.dateFrom
+                .substring(0, 10)
+                .split("-")
+                .reverse()
+                .join(".")} to the ${booking.dateTo
+                .substring(0, 10)
+                .split("-")
+                .reverse()
+                .join(".")}`}
+            </li>
+          ))}
+        </S.CurrentBookingsList>
+      </S.CurrentBookingsWrapper>
+    );
+  }
 }
