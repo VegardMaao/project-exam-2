@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 // @ts-ignore
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 //@ts-ignore
 import { singleVenueStyles as S, editButton } from "../../../styles/index.js";
 import { BookingForm } from "../../forms/bookVenueForm.tsx";
@@ -21,9 +21,22 @@ function checkUser(name1: string, name2: string) {
 }
 
 export function DisplaySingleVenue(venueInfo: any) {
+  const navigate = useNavigate();
   const [showForm, setShowForm] = useState(false);
   const { getName } = useLoggedInStore();
   const myUserName = getName();
+
+  function onEditSubmit() {
+    setShowForm(!showForm);
+    navigate(0);
+  }
+  function onEditCancel() {
+    setShowForm(!showForm);
+  }
+  function onEditDelete() {
+    setShowForm(!showForm);
+  }
+
   if (venueInfo.venueInfo.name) {
     const {
       description,
@@ -52,8 +65,17 @@ export function DisplaySingleVenue(venueInfo: any) {
           {checker ? "You are hosting this venue" : `By ${owner.name}`}
         </Link>
         <S.SingleVenueParagraph>{description}</S.SingleVenueParagraph>
-        <EditVenuePopUp display={showForm} handleOnSubmit={() => {}} />
-        <editButton.EditButton onClick={() => setShowForm(!showForm)}>
+        <EditVenuePopUp
+          id={id}
+          handleOnCancel={onEditCancel}
+          display={showForm}
+          handleOnSubmit={onEditSubmit}
+          handleOnDelete={onEditDelete}
+        />
+        <editButton.EditButton
+          display={checker ? "block" : "none"}
+          onClick={() => setShowForm(!showForm)}
+        >
           Edit Venue
         </editButton.EditButton>
         <S.SingleVenueParagraph>{`Costs ${price} dollars per night, rated ${rating} of 5. There have been ${_count.bookings} bookings of this venue so far.`}</S.SingleVenueParagraph>

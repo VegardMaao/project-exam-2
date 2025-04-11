@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 // prettier-ignore
 //@ts-ignore
 import {  singleVenueStyles as S,carouselStyles as C,} from "../../../styles/index.js";
@@ -10,6 +10,10 @@ import "pure-react-carousel/dist/react-carousel.es.css";
 function Carousel(params: any) {
   const [number, setNumber] = useState(0);
   const { media } = params;
+  const length = media.length;
+  useEffect(() => {
+    setNumber(length > 0 ? 1 : 0);
+  }, []);
 
   function add() {
     return setNumber(number + 1);
@@ -19,7 +23,6 @@ function Carousel(params: any) {
     return setNumber(number - 1);
   }
 
-  const length = media.length;
   return (
     <C.StyledCarouselProvider
       naturalSlideWidth={100}

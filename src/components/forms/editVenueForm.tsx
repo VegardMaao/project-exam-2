@@ -6,7 +6,9 @@ import { editVenueStyles as S, buttons as B, deleteButton as D } from "../../sty
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import { Controller, useForm, useFieldArray } from "react-hook-form"; //? Added useFieldArray
-import { createVenue } from "../../api/post/createVenue";
+import { editVenue } from "../../api/put/editVenue";
+import { deleteVenue } from "../../api/delete/deleteVenue";
+import { useNavigate } from "react-router-dom";
 
 const schema = yup
   .object({
@@ -39,10 +41,13 @@ const schema = yup
 type creationType = yup.InferType<typeof schema>;
 
 export function EditVenuePopUp(props: {
+  id: string;
   display: boolean;
-  handleOnSubmit: (newId: string) => void;
+  handleOnSubmit: () => void;
+  handleOnCancel: () => void;
+  handleOnDelete: () => void;
 }) {
-  const { display, handleOnSubmit } = props;
+  const { id, display, handleOnSubmit, handleOnCancel, handleOnDelete } = props;
   const {
     register,
     control,
@@ -53,7 +58,8 @@ export function EditVenuePopUp(props: {
     mode: "onChange",
   });
 
-  //? Implement useFieldArray hook
+  const navigate = useNavigate();
+
   const { fields, append, remove } = useFieldArray({
     control,
     name: "media",
@@ -63,14 +69,26 @@ export function EditVenuePopUp(props: {
     e.preventDefault();
     const formData = getValues();
     try {
-      const newVenueID = await createVenue(formData);
-      handleOnSubmit(newVenueID);
+      await editVenue(formData, id);
+      handleOnSubmit();
     } catch (error: any) {
       console.dir(error);
       if (error instanceof Error) {
         return alert(error.message);
       }
     }
+  };
+
+  const onCancel = (e: Event) => {
+    e.preventDefault();
+    handleOnCancel();
+  };
+
+  const onDelete = (e: Event) => {
+    e.preventDefault();
+    handleOnDelete();
+    deleteVenue(id);
+    navigate("/profile");
   };
 
   return (
@@ -201,15 +219,16 @@ export function EditVenuePopUp(props: {
       />
 
       <S.WideBox>
-        <B.ButtonComponent>Cancel</B.ButtonComponent>
+        <B.ButtonComponent onClick={onCancel}>Cancel</B.ButtonComponent>
         <B.ButtonComponent
+          type="submit"
           disabled={!isDirty || !isValid}
           colors={!isDirty || !isValid ? "" : "inverted"}
         >
           Submit
         </B.ButtonComponent>
 
-        <D.DeleteButton>DELETE VENUE</D.DeleteButton>
+        <D.DeleteButton onClick={onDelete}>DELETE VENUE</D.DeleteButton>
       </S.WideBox>
     </S.EditVenueForm>
   );
