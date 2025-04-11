@@ -8,6 +8,7 @@ import { BookingForm } from "../../forms/bookVenueForm.tsx";
 import { SetAmenities } from "./minorComponents/setAmenities.tsx";
 import { VenueAvailability } from "./minorComponents/venueAvailability.tsx";
 import useLoggedInStore from "../../../zustandStores/loggedInStore.ts";
+import Carousel from "./carousel.tsx";
 
 function checkUser(name1: string, name2: string) {
   if (name1 === name2) {
@@ -42,14 +43,13 @@ export function DisplaySingleVenue(venueInfo: any) {
 
     return (
       <S.SingleVenueWrapper>
-        <S.SingleVenueImage
-          src={
-            media[0]
-              ? media[0].url
-              : "https://upload.wikimedia.org/wikipedia/commons/6/65/No-Image-Placeholder.svg"
-          }
-          alt={media[0] ? media[0].alt : ""}
-        />
+        {/* <S.ImageWrapper>
+          {media.map((item: any) => (
+            <S.SingleVenueImage key={item.url} src={item.url} />
+          ))}
+        </S.ImageWrapper> */}
+        <Carousel media={media} />
+
         <S.SingleVenueHeading>{name}</S.SingleVenueHeading>
         <Link to={`/profile/${owner.name}`}>
           {checker ? "You are hosting this venue" : `By ${owner.name}`}

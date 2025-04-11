@@ -9,6 +9,13 @@ export const SingleVenueWrapper = styled.div`
   align-items: center;
 `;
 
+export const ImageWrapper = styled.div`
+  overflow-x: scroll;
+  display: flex;
+  width: 75vw;
+  height: fit-content;
+`;
+
 export const SingleVenueImage = styled.img`
   max-height: 60vh;
   max-width: 100vw;

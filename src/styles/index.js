@@ -15,3 +15,4 @@ export * as newVenueButton from "./component-styles/buttonsAndCTAs/newVenueCTA.j
 export * as newVenueFormStyles from "./component-styles/forms/newVenueForm.style.js";
 export * as searchBarStyles from "./component-styles/searchAndSort/searchBar.styles.js";
 export * as editButton from "./component-styles/buttonsAndCTAs/editButton.style.js";
+export * as carouselStyles from "./component-styles/venueElements/carousel.style.js";
