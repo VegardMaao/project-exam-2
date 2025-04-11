@@ -26,7 +26,14 @@ type Booking = {
 };
 
 export function VenueAvailability(params: any) {
-  const { bookings } = params;
+  console.log(params);
+
+  const { bookings, checker } = params;
+
+  const formatDate = (string: string) => {
+    return string.substring(0, 10).split("-").reverse().join(".");
+  };
+
   if (!bookings.length) {
     return (
       <S.CurrentBookingsWrapper>
@@ -40,15 +47,11 @@ export function VenueAvailability(params: any) {
         <S.CurrentBookingsList>
           {bookings.map((booking: Booking) => (
             <li key={booking.id}>
-              {`From the ${booking.dateFrom
-                .substring(0, 10)
-                .split("-")
-                .reverse()
-                .join(".")} to the ${booking.dateTo
-                .substring(0, 10)
-                .split("-")
-                .reverse()
-                .join(".")}`}
+              {`${
+                checker ? `By ${booking.customer.name}` : ``
+              } From the ${formatDate(booking.dateFrom)} to the ${formatDate(
+                booking.dateTo
+              )}`}
             </li>
           ))}
         </S.CurrentBookingsList>

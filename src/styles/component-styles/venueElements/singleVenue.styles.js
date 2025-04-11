@@ -43,7 +43,7 @@ export const SingleVenueParagraph = styled.p`
 export const BookingWrapper = styled.div`
   display: grid;
   width: 75vw;
-  height: 65vh;
+  height: 600px;
   grid-template-columns: 1fr 1fr;
   justify-content: space-evenly;
   justify-items: center;
@@ -69,7 +69,7 @@ export const CurrentBookingsWrapper = styled.div`
   flex-direction: column;
   align-items: center;
   margin: 5vh;
-  height: 40%;
+  height: 500px;
 
   @media (${device.sm}) {
     height: 30vh;

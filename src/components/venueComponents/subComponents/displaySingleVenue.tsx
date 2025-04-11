@@ -56,6 +56,7 @@ export function DisplaySingleVenue(venueInfo: any) {
     } = venueInfo.venueInfo || {};
 
     const checker = checkUser(`${myUserName}`, `${owner.name}`);
+    console.log(checker);
 
     return (
       <S.SingleVenueWrapper>
@@ -81,7 +82,7 @@ export function DisplaySingleVenue(venueInfo: any) {
         <S.SingleVenueParagraph>{`Costs ${price} dollars per night, rated ${rating} of 5. There have been ${_count.bookings} bookings of this venue so far.`}</S.SingleVenueParagraph>
         <S.BookingWrapper>
           <BookingForm guests={maxGuests} id={id} />
-          <VenueAvailability bookings={bookings} />
+          <VenueAvailability checker={checker} bookings={bookings} />
         </S.BookingWrapper>
         <div>
           <S.SingleVenueH2>More about this Venue:</S.SingleVenueH2>
