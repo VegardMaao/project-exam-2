@@ -16,3 +16,5 @@ export * as newVenueFormStyles from "./component-styles/forms/newVenueForm.style
 export * as searchBarStyles from "./component-styles/searchAndSort/searchBar.styles.js";
 export * as editButton from "./component-styles/buttonsAndCTAs/editButton.style.js";
 export * as carouselStyles from "./component-styles/venueElements/carousel.style.js";
+export * as deleteButton from "./component-styles/buttonsAndCTAs/deleteButton.styles";
+export * as editVenueStyles from "./component-styles/forms/editVenueForm.styles.js";

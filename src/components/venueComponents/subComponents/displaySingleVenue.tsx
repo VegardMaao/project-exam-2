@@ -3,12 +3,14 @@
 // @ts-ignore
 import { Link } from "react-router-dom";
 //@ts-ignore
-import { singleVenueStyles as S } from "../../../styles/index.js";
+import { singleVenueStyles as S, editButton } from "../../../styles/index.js";
 import { BookingForm } from "../../forms/bookVenueForm.tsx";
 import { SetAmenities } from "./minorComponents/setAmenities.tsx";
 import { VenueAvailability } from "./minorComponents/venueAvailability.tsx";
 import useLoggedInStore from "../../../zustandStores/loggedInStore.ts";
 import Carousel from "./carousel.tsx";
+import { EditVenuePopUp } from "../../forms/editVenueForm.tsx";
+import { useState } from "react";
 
 function checkUser(name1: string, name2: string) {
   if (name1 === name2) {
@@ -19,6 +21,7 @@ function checkUser(name1: string, name2: string) {
 }
 
 export function DisplaySingleVenue(venueInfo: any) {
+  const [showForm, setShowForm] = useState(false);
   const { getName } = useLoggedInStore();
   const myUserName = getName();
   if (venueInfo.venueInfo.name) {
@@ -43,18 +46,16 @@ export function DisplaySingleVenue(venueInfo: any) {
 
     return (
       <S.SingleVenueWrapper>
-        {/* <S.ImageWrapper>
-          {media.map((item: any) => (
-            <S.SingleVenueImage key={item.url} src={item.url} />
-          ))}
-        </S.ImageWrapper> */}
         <Carousel media={media} />
-
         <S.SingleVenueHeading>{name}</S.SingleVenueHeading>
         <Link to={`/profile/${owner.name}`}>
           {checker ? "You are hosting this venue" : `By ${owner.name}`}
         </Link>
         <S.SingleVenueParagraph>{description}</S.SingleVenueParagraph>
+        <EditVenuePopUp display={showForm} handleOnSubmit={() => {}} />
+        <editButton.EditButton onClick={() => setShowForm(!showForm)}>
+          Edit Venue
+        </editButton.EditButton>
         <S.SingleVenueParagraph>{`Costs ${price} dollars per night, rated ${rating} of 5. There have been ${_count.bookings} bookings of this venue so far.`}</S.SingleVenueParagraph>
         <S.BookingWrapper>
           <BookingForm guests={maxGuests} id={id} />
