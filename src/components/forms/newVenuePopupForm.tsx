@@ -17,7 +17,7 @@ const schema = yup
         alt: yup.string().required(),
       })
     ),
-    price: yup.number().required(),
+    price: yup.number().min(1, "Minimum 1").max(100, "Max 100").required(),
     maxGuests: yup.number().min(1, "Minimum 1").max(100, "Max 100").required(),
     rating: yup.number().max(5, "no more than 5").optional(),
     meta: yup.object({
