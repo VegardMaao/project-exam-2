@@ -4,20 +4,19 @@
 import { newVenueFormStyles as S, buttons as B } from "../../styles";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
-import { Controller, useForm } from "react-hook-form";
+import { Controller, useForm, useFieldArray } from "react-hook-form"; //? Added useFieldArray
 import { createVenue } from "../../api/post/createVenue";
-// import { VenueCreator } from "../interfaces/createVenueInterface";
 
 const schema = yup
   .object({
     name: yup.string().required(),
     description: yup.string().required(),
-    // media: yup
-    //   .object({
-    //     url: yup.string().required(),
-    //     alt: yup.string().required(),
-    //   })
-    //   .optional(),
+    media: yup.array().of(
+      yup.object({
+        url: yup.string().required(),
+        alt: yup.string().required(),
+      })
+    ),
     price: yup.number().required(),
     maxGuests: yup.number().min(1, "Minimum 1").max(100, "Max 100").required(),
     rating: yup.number().max(5, "no more than 5").optional(),
@@ -49,12 +48,17 @@ export function NewVenuePopUp(display: { display: string }) {
     mode: "onChange",
   });
 
+  //? Implement useFieldArray hook
+  const { fields, append, remove } = useFieldArray({
+    control,
+    name: "media",
+  });
+
   const onSubmit = async (e: Event) => {
     e.preventDefault();
     const formData = getValues();
     try {
       createVenue(formData);
-      console.log(formData);
     } catch (error: any) {
       console.dir(error);
       if (error instanceof Error) {
@@ -93,61 +97,48 @@ export function NewVenuePopUp(display: { display: string }) {
           </>
         )}
       />
-      {/* <Controller
-        name="media.url"
-        control={control}
-        render={() => (
-          <>
-            <S.NewVenueLabel>Image url</S.NewVenueLabel>
-            <S.NewVenueInput {...register("media.url")} />
-            <S.ErrorMsg
-              display={errors.media?.url?.message ? "inline" : "none"}
-            >
-              {errors.media?.url?.message}
-            </S.ErrorMsg>
-          </>
-        )}
-      />
 
-      <Controller
-        name="media.alt"
-        control={control}
-        render={() => (
-          <>
-            <S.NewVenueLabel>Image description</S.NewVenueLabel>
-            <S.NewVenueInput {...register("media.alt")} />
-            <S.ErrorMsg
-              display={errors.media?.alt?.message ? "inline" : "none"}
-            >
-              {errors.media?.alt?.message}
-            </S.ErrorMsg>
-          </>
-        )}
-      /> */}
-      {/* 
       <Controller
         name="media"
         control={control}
         render={() => (
           <>
-            <S.NewVenueLabel>Image URL</S.NewVenueLabel>
-            <S.NewVenueInput {...register("media.url")} />
-            <S.ErrorMsg
-              display={errors.media?.url?.message ? "inline" : "none"}
-            >
-              {errors.media?.url?.message}
-            </S.ErrorMsg>
+            <S.NewVenueLabel>Images</S.NewVenueLabel>
+            {fields.map((field, index) => (
+              <div key={field.id}>
+                <S.NewVenueLabel>Image URL</S.NewVenueLabel>
+                <S.NewVenueInput {...register(`media.${index}.url`)} />
+                <S.ErrorMsg
+                  display={
+                    errors.media?.[index]?.url?.message ? "inline" : "none"
+                  }
+                >
+                  {errors.media?.[index]?.url?.message}
+                </S.ErrorMsg>
 
-            <S.NewVenueLabel>Image description</S.NewVenueLabel>
-            <S.NewVenueInput {...register("media.alt")} />
-            <S.ErrorMsg
-              display={errors.media?.alt?.message ? "inline" : "none"}
+                <S.NewVenueLabel>Image description</S.NewVenueLabel>
+                <S.NewVenueInput {...register(`media.${index}.alt`)} />
+                <S.ErrorMsg
+                  display={
+                    errors.media?.[index]?.alt?.message ? "inline" : "none"
+                  }
+                >
+                  {errors.media?.[index]?.alt?.message}
+                </S.ErrorMsg>
+                <B.ButtonComponent type="button" onClick={() => remove(index)}>
+                  Delete
+                </B.ButtonComponent>
+              </div>
+            ))}
+            <B.ButtonComponent
+              type="button"
+              onClick={() => append({ url: "", alt: "" })}
             >
-              {errors.media?.alt?.message}
-            </S.ErrorMsg>
+              Add image
+            </B.ButtonComponent>
           </>
         )}
-      /> */}
+      />
 
       <Controller
         name="price"

@@ -19,7 +19,12 @@ export const StyledSlider = styled(Slider)`
   width: 500px;
 `;
 
-export const StyledSlide = styled(Slide)``;
+export const StyledSlide = styled(Slide)`
+  img {
+    object-fit: fill;
+    height: 100%;
+  }
+`;
 
 export const SlideNumber = styled.p``;
 
