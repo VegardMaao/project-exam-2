@@ -11,9 +11,12 @@ import { useParams } from "react-router-dom";
 import { profilesUrl } from "../../../environment";
 import useLoggedInStore from "../../../zustandStores/loggedInStore.ts";
 //@ts-ignore
-import { loadingStyles, buttons, ProfileElem as S } from "../../../styles";
+import { loadingStyles, ProfileElem as S } from "../../../styles";
+import { EditProfileForm } from "../../../components/forms/editProfileForm.tsx";
+import { useState } from "react";
 
 export function Profile() {
+  const [showForm, setShowForm] = useState(false);
   const { getName } = useLoggedInStore();
   const nameFromStore = getName();
   const { name: userName } = useParams();
@@ -48,7 +51,6 @@ export function Profile() {
 
   if (data.name) {
     const { banner, avatar, name, email, bio, venueManager } = data;
-
     const venuesUrl = `${url}/venues`;
 
     return (
@@ -63,12 +65,14 @@ export function Profile() {
               bio={bio}
             />
           </S.AvatarAndSummaryWrapper>
-          <S.EditProfileLink
-            display={myUserBool ? "block" : "none"}
-            to={"/profile/edit"}
-          >
-            <buttons.ButtonComponent>Edit your profile</buttons.ButtonComponent>
-          </S.EditProfileLink>
+
+          <EditProfileForm
+            setShowForm={setShowForm}
+            userBool={myUserBool}
+            showForm={showForm}
+            placeholder={data}
+          />
+
           <S.FlexBox>
             <UserBookings.UserBookings />
             <VenueManager.VenueManager
