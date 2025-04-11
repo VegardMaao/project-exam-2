@@ -11,7 +11,7 @@ export function SetAllVenues({ data }: { data: VenuesArr }) {
 
   useEffect(() => {
     setAllVenues(data);
-  }, []);
+  }, [data]);
 
   if (allVenues) {
     return (
