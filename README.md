@@ -14,10 +14,10 @@ This is my Project Exam 2. It is based on the Noroff Holidaze API, and I have us
 
 ## Installing the project
 
-Use npm i to install
+- Use npm i to install
 
 ## Running the project locally
 
-Use npm run dev to run locally
-Use npm run build to build page
-Use npm run test to run tests
+- Use npm run dev to run locally
+- Use npm run build to build page
+- Use npm run test to run tests
