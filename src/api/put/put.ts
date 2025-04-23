@@ -1,6 +1,12 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { getHeaders } from "../getHeaders";
 
+/**
+ * @description my generic put function. Protected by specific put functions, to ensure data quality
+ * @param {string} url - url for put function
+ * @param {object} data - body for put function
+ * @returns 
+ */
 export const putData = async (url: string, data: any) => {
     const body = data;
     const req = {

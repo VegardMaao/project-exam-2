@@ -1,6 +1,12 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { getHeaders } from "../getHeaders";
 
+/**
+ * @description a generic post function. Specific info is passed from functions one level up to protect data quality
+ * @param url - where to post data 
+ * @param data - what data to post 
+ * @returns 
+ */
 export const postData = async (url: string, data: any) => {
   const body = data;
   const req = {

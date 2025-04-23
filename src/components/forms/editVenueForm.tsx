@@ -87,7 +87,7 @@ export function EditVenuePopUp(props: {
     e.preventDefault();
     handleOnDelete();
     deleteVenue(id);
-    navigate("/profile");
+    navigate("/profile/");
   };
 
   return (

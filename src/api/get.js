@@ -1,6 +1,12 @@
 import { useState, useEffect } from "react";
 import { getHeaders } from "./getHeaders";
 
+/**
+ * @description a simple get which can be destructured into loading, error and finished state
+ * @param { string } urlParam - the url of the fetch request
+ * @param {object } body - the body of my fetch request
+ * @returns
+ */
 export default function useGetAPI(urlParam, body) {
   const req = {
     method: `GET`,
