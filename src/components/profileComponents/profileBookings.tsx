@@ -26,7 +26,7 @@ export function UserBookings() {
 
   if (
     !location.pathname.includes(`${name}`) &&
-    location.pathname !== "/profile"
+    location.pathname !== "/profile/"
   ) {
     return <></>;
   }
