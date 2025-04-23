@@ -17,9 +17,12 @@ export const StyledCarouselProvider = styled(CarouselProvider)`
 export const StyledSlider = styled(Slider)`
   height: 500px;
   width: 500px;
+  z-index: -1;
+  max-width: 100vw;
 `;
 
 export const StyledSlide = styled(Slide)`
+  display: flex;
   img {
     object-fit: fill;
     height: 100%;
