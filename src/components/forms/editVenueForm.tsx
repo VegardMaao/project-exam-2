@@ -72,7 +72,6 @@ export function EditVenuePopUp(props: {
       await editVenue(formData, id);
       handleOnSubmit();
     } catch (error: any) {
-      console.dir(error);
       if (error instanceof Error) {
         return alert(error.message);
       }

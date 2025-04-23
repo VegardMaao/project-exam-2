@@ -51,12 +51,10 @@ export function LoginUserForm(params: any) {
     e.preventDefault();
     const formData = getValues();
     try {
-      const { data } = await loginUser(formData);
-      console.log(data);
+      await loginUser(formData);
       logIn();
-      navigate(0);
+      navigate("/profile/");
     } catch (error: any) {
-      console.dir(error);
       if (error instanceof Error) {
         return alert(error.message);
       }

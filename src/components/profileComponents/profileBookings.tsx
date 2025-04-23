@@ -16,6 +16,10 @@ export function UserBookings() {
   const url = `${profilesUrl}/${name}/bookings?_venue=true&_customer=true`;
   const { data, isLoading, isError } = useGetAPI(url);
 
+  const formatDate = (string: string) => {
+    return string.substring(0, 10).split("-").reverse().join(".");
+  };
+
   if (isLoading) {
     return <loadingStyles.Loader />;
   }
@@ -51,15 +55,9 @@ export function UserBookings() {
               </S.VenueAndBookingName>
 
               <S.VenueAndBookingDetails>
-                {`Booked from the ${booking.dateFrom
-                  .substring(0, 10)
-                  .split("-")
-                  .reverse()
-                  .join(".")}, to the ${booking.dateTo
-                  .substring(0, 10)
-                  .split("-")
-                  .reverse()
-                  .join(".")}`}
+                {`Booked from the ${formatDate(
+                  booking.dateFrom
+                )}, to the ${formatDate(booking.dateTo)}`}
               </S.VenueAndBookingDetails>
             </S.VenuesAndBookingsLink>
           </li>

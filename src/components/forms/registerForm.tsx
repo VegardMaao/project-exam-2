@@ -59,7 +59,6 @@ export function RegisterUserForm(params: any) {
       await registerUser(formData);
       navigate("/profile/login");
     } catch (error: any) {
-      console.dir(error);
       if (error instanceof Error) {
         return alert(error.message);
       }

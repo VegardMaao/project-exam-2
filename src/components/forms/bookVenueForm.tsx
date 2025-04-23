@@ -59,7 +59,6 @@ export function BookingForm(params: params) {
       await createBooking(formData);
       return navigate("/venues/confirmation");
     } catch (error: any) {
-      console.dir(error);
       if (error instanceof Error) {
         return alert(error.message);
       }

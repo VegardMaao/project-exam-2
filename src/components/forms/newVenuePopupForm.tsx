@@ -65,7 +65,6 @@ export function NewVenuePopUp(props: {
       const newVenueID = await createVenue(formData);
       handleOnSubmit(newVenueID);
     } catch (error: any) {
-      console.dir(error);
       if (error instanceof Error) {
         return alert(error.message);
       }

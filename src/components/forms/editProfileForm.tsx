@@ -67,13 +67,11 @@ export function EditProfileForm(params: any) {
     e.preventDefault();
     const formData = getValues();
     try {
-      console.log(formData);
       editProfile(formData, userNameAsString);
       setTimeout(() => {
         navigate(0);
       }, 1000);
     } catch (error: any) {
-      console.dir(error);
       if (error instanceof Error) {
         return alert(error.message);
       }

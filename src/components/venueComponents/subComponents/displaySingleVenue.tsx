@@ -26,6 +26,10 @@ export function DisplaySingleVenue(venueInfo: any) {
   const { getName } = useLoggedInStore();
   const myUserName = getName();
 
+  const formatDate = (string: string) => {
+    return string.substring(0, 10).split("-").reverse().join(".");
+  };
+
   function onEditSubmit() {
     setShowForm(!showForm);
     navigate(0);
@@ -96,15 +100,9 @@ export function DisplaySingleVenue(venueInfo: any) {
                   : `Unspecified location`
               }`}</S.AmenitiesItem>
               <S.AmenitiesItem>{`Max ${maxGuests} guests`}</S.AmenitiesItem>
-              <S.AmenitiesItem>{`This venue was established ${created
-                .substring(0, 10)
-                .split("-")
-                .reverse()
-                .join(".")}, last updated ${updated
-                .substring(0, 10)
-                .split("-")
-                .reverse()
-                .join(".")}`}</S.AmenitiesItem>
+              <S.AmenitiesItem>{`This venue was established ${formatDate(
+                created
+              )}, last updated ${formatDate(updated)}`}</S.AmenitiesItem>
             </S.AmenitiesDiv>
           </S.MoreInfoDiv>
         </div>
