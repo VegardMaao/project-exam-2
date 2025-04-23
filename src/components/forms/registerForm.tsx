@@ -68,7 +68,7 @@ export function RegisterUserForm(params: any) {
 
   return (
     <S.LoginRegisterForm onSubmit={onSubmit}>
-      <h2>Register a new user</h2>
+      <h1>Register a new user</h1>
       <S.FormLabel htmlFor="name">Your name</S.FormLabel>
       <S.FormInput
         {...register("name")}

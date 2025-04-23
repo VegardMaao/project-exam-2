@@ -26,8 +26,6 @@ type Booking = {
 };
 
 export function VenueAvailability(params: any) {
-  console.log(params);
-
   const { bookings, checker } = params;
 
   const formatDate = (string: string) => {

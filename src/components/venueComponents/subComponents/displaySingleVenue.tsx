@@ -56,8 +56,6 @@ export function DisplaySingleVenue(venueInfo: any) {
     } = venueInfo.venueInfo || {};
 
     const checker = checkUser(`${myUserName}`, `${owner.name}`);
-    console.log(checker);
-
     return (
       <S.SingleVenueWrapper>
         <Carousel media={media} />
