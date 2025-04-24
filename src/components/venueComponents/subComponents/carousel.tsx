@@ -16,11 +16,11 @@ function Carousel(params: any) {
   }, [length]);
 
   function add() {
-    return setNumber(number + 1);
+    setNumber(number + 1);
   }
 
   function subtract() {
-    return setNumber(number - 1);
+    setNumber(number - 1);
   }
 
   return (
