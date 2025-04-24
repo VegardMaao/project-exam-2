@@ -12,10 +12,12 @@ function Carousel(params: any) {
   const { media } = params;
   const length = media.length;
   useEffect(() => {
-    setNumber(length > 0 ? 1 : 0);
+    setNumber(length === 0 ? 0 : 1);
   }, []);
 
   function add() {
+    console.log("hello");
+
     return setNumber(number + 1);
   }
 
