@@ -13,7 +13,7 @@ function Carousel(params: any) {
   const length = media.length;
   useEffect(() => {
     setNumber(length === 0 ? 0 : 1);
-  }, [length]);
+  }, [setNumber, length]);
 
   function add() {
     setNumber(number + 1);
