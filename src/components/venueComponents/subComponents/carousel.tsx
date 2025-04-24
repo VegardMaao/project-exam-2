@@ -20,12 +20,13 @@ function Carousel(params: any) {
       const newNum = oldNum + 1;
       return newNum;
     });
-
-    // return setNumber(number + 1);
   }
 
   function subtract() {
-    return setNumber(number - 1);
+    setNumber((oldNum) => {
+      const newNum = oldNum - 1;
+      return newNum;
+    });
   }
 
   return (
