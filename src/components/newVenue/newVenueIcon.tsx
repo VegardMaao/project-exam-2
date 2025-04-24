@@ -10,6 +10,7 @@ export function NewVenueIcon() {
   const [showButton, setShowButton] = useState<string | null>();
   const [rotate, setRotate] = useState("0");
   const navigate = useNavigate();
+  const manager = localStorage.getItem("venueManager");
 
   function onClick() {
     setShowForm(!showForm);
@@ -22,10 +23,9 @@ export function NewVenueIcon() {
     navigate(goTo);
   }
 
-  const manager = localStorage.getItem("venueManager");
   useEffect(() => {
     setShowButton(manager);
-  }, []);
+  }, [manager]);
 
   if (showButton === "true") {
     return (
