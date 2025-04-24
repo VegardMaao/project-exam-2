@@ -13,14 +13,19 @@ function Carousel(params: any) {
   const length = media.length;
   useEffect(() => {
     setNumber(length === 0 ? 0 : 1);
-  }, [setNumber, length]);
+  }, [length]);
 
   function add() {
-    setNumber(number + 1);
+    setNumber((oldNum) => {
+      const newNum = oldNum + 1;
+      return newNum;
+    });
+
+    // return setNumber(number + 1);
   }
 
   function subtract() {
-    setNumber(number - 1);
+    return setNumber(number - 1);
   }
 
   return (
