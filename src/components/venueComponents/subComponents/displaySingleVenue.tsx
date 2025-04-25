@@ -11,6 +11,7 @@ import useLoggedInStore from "../../../zustandStores/loggedInStore.ts";
 import Carousel from "./carousel.tsx";
 import { EditVenuePopUp } from "../../forms/editVenueForm.tsx";
 import { useState } from "react";
+import { formatDate } from "../../../helper/formatDate.ts";
 
 function checkUser(name1: string, name2: string) {
   if (name1 === name2) {
@@ -25,10 +26,6 @@ export function DisplaySingleVenue(venueInfo: any) {
   const [showForm, setShowForm] = useState(false);
   const { getName } = useLoggedInStore();
   const myUserName = getName();
-
-  const formatDate = (string: string) => {
-    return string.substring(0, 10).split("-").reverse().join(".");
-  };
 
   function onEditSubmit() {
     setShowForm(!showForm);

@@ -8,6 +8,7 @@ import { useGetAPI } from "../../api";
 import { loadingStyles } from "../../styles";
 import { ExistingBooking } from "../interfaces/bookingInterFace";
 import { useLocation } from "react-router-dom";
+import { formatDate } from "../../helper/formatDate";
 
 export function UserBookings() {
   const { getName } = useLoggedInStore();
@@ -15,10 +16,6 @@ export function UserBookings() {
   const location = useLocation();
   const url = `${profilesUrl}/${name}/bookings?_venue=true&_customer=true`;
   const { data, isLoading, isError } = useGetAPI(url);
-
-  const formatDate = (string: string) => {
-    return string.substring(0, 10).split("-").reverse().join(".");
-  };
 
   if (isLoading) {
     return <loadingStyles.Loader />;

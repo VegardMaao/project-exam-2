@@ -2,6 +2,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 //@ts-ignore
 import { singleVenueStyles as S } from "../../../../styles/index.js";
+import { formatDate } from "../../../../helper/formatDate.js";
 
 type Booking = {
   id: string;
@@ -27,10 +28,6 @@ type Booking = {
 
 export function VenueAvailability(params: any) {
   const { bookings, checker } = params;
-
-  const formatDate = (string: string) => {
-    return string.substring(0, 10).split("-").reverse().join(".");
-  };
 
   if (!bookings.length) {
     return (
