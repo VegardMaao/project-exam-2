@@ -8,6 +8,7 @@ import { useGetAPI } from "../../api";
 import { loadingStyles } from "../../styles";
 import { ExistingBooking } from "../interfaces/bookingInterFace";
 import { useLocation } from "react-router-dom";
+//@ts-ignore
 import { formatDate } from "../../helper/formatDate";
 
 export function UserBookings() {

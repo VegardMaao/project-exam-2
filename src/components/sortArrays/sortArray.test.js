@@ -18,17 +18,7 @@ const expectedArray = [
 
 describe("Sorting", () => {
   it("Array should be sorted by highest rating", () => {
-    testArray.sort((a, b) => {
-      if (a.rating > b.rating) {
-        return -1;
-      }
-
-      if (a.rating > b.rating) {
-        return 1;
-      }
-
-      return 0;
-    });
+    testArray.sort(sortByRating);
     expect(testArray).toEqual(expectedArray);
   });
 });

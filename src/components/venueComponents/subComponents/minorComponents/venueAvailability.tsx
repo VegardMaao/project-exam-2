@@ -2,6 +2,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 //@ts-ignore
 import { singleVenueStyles as S } from "../../../../styles/index.js";
+//@ts-ignore
 import { formatDate } from "../../../../helper/formatDate.js";
 
 type Booking = {

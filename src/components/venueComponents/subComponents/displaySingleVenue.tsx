@@ -11,7 +11,8 @@ import useLoggedInStore from "../../../zustandStores/loggedInStore.ts";
 import Carousel from "./carousel.tsx";
 import { EditVenuePopUp } from "../../forms/editVenueForm.tsx";
 import { useState } from "react";
-import { formatDate } from "../../../helper/formatDate.ts";
+//@ts-ignore
+import { formatDate } from "../../../helper/formatDate.js";
 
 function checkUser(name1: string, name2: string) {
   if (name1 === name2) {
