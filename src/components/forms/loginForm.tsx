@@ -53,9 +53,7 @@ export function LoginUserForm(params: any) {
     try {
       await loginUser(formData);
       logIn();
-      setTimeout(() => {
-        return navigate(0);
-      }, 500);
+      navigate(0);
     } catch (error: any) {
       if (error instanceof Error) {
         return alert(error.message);
