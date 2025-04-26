@@ -19,7 +19,7 @@ const footerText = [
 const footerIcons = [
   {
     title: `<i class="fa-brands fa-github"></i>`,
-    link: "https://github.com/VegardMaao",
+    link: "https://github.com/VegardMaao/project-exam-2",
     target: "_blank",
   },
   {
