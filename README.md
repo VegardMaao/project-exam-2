@@ -34,10 +34,7 @@ I have used the the following technologies to create the frontend:
 
 ## Installing the project
 
-Clone the repo:
-git clone git@github.com:NoroffFEU/portfolio-1-example.git
-
-Install the dependencies:
+Clone the repo and install the dependencies:
 npm install
 
 
