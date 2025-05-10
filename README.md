@@ -22,27 +22,49 @@ The project is based on the Noroff Holidaze API, and users can make the followin
 ## Built with:
 
 I have used the the following technologies to create the frontend:
-- Vite w/ React and TypeScript
-- EsLint
-- react-helmet
-- jest
-- babel
-- yup
-- react-hook-form
-- react-router-dom
-- zustand
+- [Vite](https://vite.dev/)
+- [React](https://react.dev/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Styled Components](https://styled-components.com/)
+- [Eslint](https://eslint.org/)
+- [React helmet](https://www.npmjs.com/package/react-helmet)
+- [Jest](https://jestjs.io/)
+- [babel](https://babeljs.io/)
+- [Yup](https://yup-docs.vercel.app/)
+- [React hook form](https://react-hook-form.com/)
+- [react-router-dom](https://reactrouter.com/)
+- [Zustand](https://zustand.docs.pmnd.rs/getting-started/introduction)
 
 ## Installing the project
 
-Clone the repo and install the dependencies:
+# Getting started
+1. Clone the repo:
+
+```bash
+git clone https://github.com/VegardMaao/project-exam-2.git
+```
+
+2. Install the dependencies:
+
+```
 npm install
+```
+
 
 
 ## Running the project locally
-
-- Use npm run dev to run locally
-- Use npm run build to build page
-- Use npm run test to run tests
+To run locally:
+```
+npm run dev
+```
+To build page:
+```
+npm run build
+```
+To run tests:
+```
+npm run test
+```
 
 ## Contact: 
 
